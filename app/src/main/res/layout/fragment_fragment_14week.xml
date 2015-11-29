@@ -23,25 +23,6 @@
 
             <!-- 			android:gravity="bottom"  -->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#F8F8F8"
-                android:paddingLeft="16dp" >
-
-                <TextView
-                    android:id="@+id/textV_vacc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:alpha="54"
-                    android:padding="@dimen/standard_padding"
-                    android:paddingBottom="7dp"
-                    android:paddingTop="7dp"
-                    android:text="VACCINES"
-                    android:textColor="#000000"
-                    android:textSize="17dp" />
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

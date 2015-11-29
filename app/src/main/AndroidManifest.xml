@@ -16,6 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
 
+        <meta-data android:name="AA_DB_NAME" android:value="Database.db" />
+        <meta-data android:name="AA_DB_VERSION" android:value="1" />
         <activity android:name="vaccine_process.Vaccine_record"  >
 
 

@@ -1,45 +1,48 @@
-
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:minWidth="800dp"
 android:fillViewport="true">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-    <!--Toolbar for Tutor Activities-->
+        <include layout="@layout/tablayout"
+            android:id="@+id/VaccineProcessActivityTabLayoutInclude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
+        <TextView
+            android:id="@+id/pager_vaccine_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/standard_padding"
+            android:text="VACCINES"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:layout_below="@+id/VaccineProcessActivityTabLayoutInclude"
+            android:gravity="center"
+            android:phoneNumber="true"
+            android:textStyle="bold"
+            android:background="@color/white" />
 
-    <!--TabLayout for View Pager-->
+        <vaccine_process.CustomViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/pager_vaccine_textview" />
 
-    <include layout="@layout/tablayout" android:id="@+id/baseActivityTabLayoutInclude"
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/pager_vaccine_textview"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/frame_container"
+            android:layout_alignParentBottom="true" />
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <vaccine_process.CustomViewPager
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/baseActivityTabLayoutInclude"
-
-        />
-
-
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/baseActivityTabLayoutInclude"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/frame_container"
-        android:layout_alignParentBottom="true" />
-
-</RelativeLayout>
+    </RelativeLayout>
 </ScrollView>

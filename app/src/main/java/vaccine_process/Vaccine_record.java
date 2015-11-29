@@ -85,7 +85,7 @@ public class Vaccine_record extends AppCompatActivity implements Fragment_birth.
         //toolbar = (Toolbar) findViewById(R.id.baseActivityToolbarInclude);
         //mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
 
-            tabLayout = (TabLayout) findViewById(R.id.baseActivityTabLayoutInclude);
+            tabLayout = (TabLayout) findViewById(R.id.VaccineProcessActivityTabLayoutInclude);
       tabLayout.setupWithViewPager(mViewPager);
         tabLayout.setBackgroundColor(Color.parseColor("#f3f5f9"));
 
