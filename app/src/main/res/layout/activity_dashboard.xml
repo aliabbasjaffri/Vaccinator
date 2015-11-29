@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/White"
+    android:orientation="vertical"
+    android:padding="5dp" >
 
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@color/White"
-        android:orientation="vertical"
-        android:padding="5dp" >
     <LinearLayout
         android:id="@+id/Login_logo"
         android:layout_width="fill_parent"
@@ -14,24 +13,15 @@
         android:layout_weight="1.5"
         android:orientation="vertical"
         android:padding="5dp"
-        android:paddingTop="20dp"
+        android:paddingTop="20dp">
 
-        >
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/Logo_Main"
+            android:src="@drawable/childimmunizationprogram" />
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/Logo_Main"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-
-        android:layout_above="@+id/Login_Credentials_Layout"
-        android:layout_centerHorizontal="true"
-
-        />
-
-</LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/Login_Credentials_Layout"
@@ -43,60 +33,49 @@
         android:paddingRight="50dp"
         >
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:layout_gravity="center"
+            android:hint="Email address"
+            android:id="@+id/User_ID"
+            />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:layout_gravity="center"
-        android:hint="Email address"
-        android:id="@+id/User_ID"
-        />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:id="@+id/User_Password"
+             />
+        
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:id="@+id/Login_Submit"
+            android:background="@drawable/circular_button_login"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:padding="5dp"
+            />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="Password"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:id="@+id/User_Password"
-         />
-
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="LOGIN"
-        android:id="@+id/Login_Submit"
-        android:background="@color/Button_Theme_color"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-
-        android:textColor="@color/white"
-        android:layout_gravity="center"
-        android:onClick="Login_Verification"
-        android:textStyle="bold"
-        />
-
-
-    <TextView
-        android:id="@+id/Forgetpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:autoLink="web"
-        android:gravity="right"
-
-        android:layout_marginTop="10dp"
-        android:text="Forget Password"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:onClick="Forget_Password"
-        />
-
-
+        <TextView
+            android:id="@+id/Forgetpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:autoLink="web"
+            android:gravity="right"
+            android:layout_marginTop="10dp"
+            android:text="Forget Password"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            />
     </LinearLayout>
-
 </LinearLayout>

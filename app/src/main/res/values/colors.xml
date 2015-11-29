@@ -7,22 +7,6 @@
 
     <color name="Button_Theme_color">#0b0b2c</color>
 
-    <item name="toolbar" type="color">#ff6569</item>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <color name="white">#FFFFFF</color>
     <color name="yellow">#FFFF00</color>
     <color name="fuchsia">#FF00FF</color>
@@ -180,7 +164,4 @@
     <color name="DarkBlue">#00008B</color>
     <color name="Navy">#000080</color>
     <color name="Black">#000000</color>
-
-
-
 </resources>

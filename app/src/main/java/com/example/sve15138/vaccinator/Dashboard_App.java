@@ -4,48 +4,35 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-public class Dashboard_App extends AppCompatActivity {
-
+public class Dashboard_App extends AppCompatActivity
+{
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        Button loginVerification = (Button) findViewById(R.id.Login_Submit);
+        TextView forgetPassword = (TextView) findViewById(R.id.Forgetpassword);
 
-        // setting launcher image of injection.
-        ImageView launch_img=(ImageView)findViewById(R.id.Logo_Main);
+        loginVerification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_fpass = new Intent(Dashboard_App.this, Home_activity.class);
+                startActivity(intent_fpass);
+            }
+        });
 
-        launch_img.setImageResource(R.drawable.childimmunizationprogram);
-
-
-
-
-
-
-
+        forgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_fpass = new Intent(Dashboard_App.this, Forget_pass_activity.class);
+                startActivity(intent_fpass);
+            }
+        });
     }
-    public void  Login_Verification(View v)
-    {
-        Intent intent_fpass = new Intent(this, Home_activity.class);
-        startActivity(intent_fpass);
-
-    }
-
-
-
-
-    public void  Forget_Password(View v)
-    {
-        Intent intent_fpass = new Intent(this,Forget_pass_activity.class);
-        startActivity(intent_fpass);
-
-
-    }
-
-
-
-
-
 }
