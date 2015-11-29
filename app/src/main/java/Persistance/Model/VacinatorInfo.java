@@ -33,4 +33,6 @@ public class VacinatorInfo extends Model
 
     @Column(name = "UCID")
     public String ucID;
+
+
 }
