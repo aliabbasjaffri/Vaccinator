@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/container"
+android:layout_width="match_parent"
+android:layout_height="match_parent" >
+
+<TextView
+    android:id="@+id/textView1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent"
+    android:gravity="left|center_vertical"
+    android:paddingLeft="5sp"
+    android:text="Search Child"
+    android:textColor="@color/white"
+    android:textSize="20sp"
+     />
+
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="40sp" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView1"
+            android:orientation="horizontal"
+            android:padding="5sp" >
+
+            <EditText
+                android:id="@+id/edttxt_search_cardid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:ems="10"
+                android:hint="Enter Child ID"
+                android:inputType="number"
+                android:background="@drawable/textview"
+                android:minHeight="45dp"
+                android:paddingLeft="10dp" >
+            </EditText>
+
+            <Button
+                android:id="@+id/btn_searchchild"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.2"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@color/Button_Theme_color"
+                android:text="Search" />
+        </LinearLayout>
+        <!-- View Title Label -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:background="@color/colorAccent"
+            android:gravity="left|center_vertical"
+            android:text="Advance Search"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+             />
+        <!-- Name Label -->
+        <!-- Name TextField -->
+
+
+        <!-- Name Label -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Child Name"
+            android:textSize="18sp" />
+        <!-- Name TextField -->
+
+
+        <!-- Email Label -->
+
+        <EditText
+            android:id="@+id/search_childName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="25"
+            android:minHeight="45dp"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textSize="18sp" />
+        <!-- Email TextField -->
+
+
+        <!-- Password Label -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:checked="true"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Female" />
+            </RadioGroup>
+        </LinearLayout>
+        <!-- Password TextField -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:text="Father Name"
+            android:textSize="18sp" />
+        <!-- Password TextField -->
+
+
+        <!-- Password Label -->
+
+        <EditText
+            android:id="@+id/search_fatherName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="25"
+            android:minHeight="45dp"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:text="Father CNIC"
+            android:textSize="18sp" />
+        <!-- Password TextField -->
+        <!-- Password Label -->
+
+        <EditText
+            android:id="@+id/search_fatherCnic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview"
+            android:ems="10"
+            android:hint="32106-3445556-2"
+            android:maxLength="15"
+            android:minHeight="45dp"
+            android:paddingLeft="10dp"
+            android:text="" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:text="Father Mobile #"
+            android:textSize="18sp" />
+        <!-- Password TextField -->
+
+        <EditText
+            android:id="@+id/search_fatherMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="13"
+            android:minHeight="45dp"
+            android:paddingLeft="10dp" />
+
+        <!-- Password Label -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:text="Address"
+            android:textSize="18sp" />
+        <!-- Password TextField -->
+
+        <EditText
+            android:id="@+id/search_address"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview"
+            android:inputType="text"
+            android:maxLength="50"
+            android:minHeight="45dp"
+            android:paddingLeft="10dp"
+            android:singleLine="true" />
+
+        <!-- Password Label -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:text="Tehseel"
+            android:textSize="18sp" />
+        <!-- Password TextField -->
+
+        <Spinner
+            android:id="@+id/search_TehseelSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Password Label -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:text="District"
+            android:textSize="18sp" />
+        <!-- Password Label -->
+
+        <Spinner
+            android:id="@+id/search_TehseelSpinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/search_Btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="@color/Button_Theme_color"
+            android:minHeight="45dp"
+            android:text="Search"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <!-- Link to Login Screen -->
+
+    </LinearLayout>
+</ScrollView>
+
+
+</RelativeLayout>

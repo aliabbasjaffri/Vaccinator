@@ -1,0 +1,210 @@
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F8F8F8"
+        android:clickable="false"
+        android:orientation="vertical"
+        android:scrollbarStyle="insideOverlay"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <!-- 			android:gravity="bottom"  -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F8F8"
+                    android:paddingLeft="16dp" >
+
+                    <TextView
+                        android:id="@+id/textV_vacc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="54"
+                        android:padding="@dimen/standard_padding"
+                        android:paddingBottom="7dp"
+                        android:paddingTop="7dp"
+                        android:text="VACCINES"
+                        android:textColor="#000000"
+                        android:textSize="17dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/White"
+                    android:padding="@dimen/standard_padding"
+                    android:paddingLeft="16dp" >
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="54dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/vaccine" />
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:paddingLeft="10dp"
+                        android:text="BCG"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#4d4d4d"
+                        android:textSize="17dp" />
+
+                    <!-- style="@style/toggleButton"
+                        android:background="@drawable/btn_toggle_bg"
+                        android:textOff=""
+                        android:textOn=""
+                        android:thumb="@android:drawable/screen_background_light_transparent" -->
+                    <Switch
+                        android:id="@+id/switch_birth_bcg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.2dp"
+                    android:id="@+id/separator3"
+                    android:visibility="visible"
+                    android:background="@android:color/darker_gray"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/standard_padding"
+                    android:paddingLeft="16dp" >
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="54dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/polio" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:paddingLeft="10dp"
+                        android:text="OPV"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#4d4d4d"
+                        android:textSize="17dp" />
+
+                    <!-- style="@style/toggleButton"
+                    android:background="@drawable/btn_toggle_temp"
+                        android:textOff=""
+                        android:textOn=""
+                        android:thumb="@android:drawable/screen_background_light_transparent"-->
+                    <Switch
+                        android:id="@+id/Switch_birth_opv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginRight="16dp"
+                        />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.2dp"
+                    android:id="@+id/separator4"
+                    android:visibility="visible"
+                    android:background="@android:color/darker_gray"/>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.2dp"
+                    android:id="@+id/separator"
+                    android:visibility="visible"
+                    android:background="@android:color/darker_gray"/>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.2dp"
+                    android:id="@+id/separator2"
+                    android:visibility="visible"
+                    android:background="@android:color/darker_gray"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/standard_padding"
+                    android:paddingLeft="16dp" >
+
+                    <TextView
+                        android:id="@+id/TextView04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="16dp"
+                        android:text="COMMENTS"
+                        android:textAppearance="?android:attr/textAppearance"
+                        android:textColor="#000000"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/white"
+                    android:padding="20dp" >
+
+
+
+                    <EditText
+                        android:id="@+id/edtxt_comments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Add Comments here..."
+                        android:inputType="textMultiLine"
+                        android:paddingLeft="16dp" />
+
+
+
+                </LinearLayout>
+
+
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/Button_Theme_color"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+
+                    android:text="Submit" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+

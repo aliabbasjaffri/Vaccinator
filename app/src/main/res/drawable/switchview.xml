@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <selector xmlns:android="http://schemas.android.com/apk/res/android">
+     <item android:drawable="@drawable/done1" android:state_checked="true"/> //the drawable to be displayed when view is checked.
+     <item android:drawable="@drawable/pending1" android:state_checked="false"/>//the drawable to be displayed when view is not checked.
+ </selector>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (C) 2008 ZXing authors
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ -->
+<resources>
+    <string-array name="DistrictNames">
+        <item >Bahawalnagar</item> 		<item>Bahawalpur</item>		<item>Rahim Yar Khan</item>
+        <item>DERA GHAZI KHAN</item>	<item>LAYYAH</item>			<item>MUZAFFAR GARH</item>
+        <item>RAJAN PUR</item>			<item>FAISALABAD</item>		<item>JHANG</item>
+        <item>TOBA TEK SINGH</item>			<item>CHINIOT</item>		<item>GUJRANWALA</item>
+        <item>GUJRAT</item>				<item>SIALKOT</item>		<item>NAROWAL</item>
+        <item>HAFIZABAD</item>			<item>MANDI BAHUDDIN</item>	<item>KASUR</item>
+        <item>LAHORE</item>				<item>SHEIKHUPURA</item>	<item>NANKANA SAHIB</item>
+        <item>MULTAN</item>				<item>KHANEWAL</item>		<item>VEHARI</item>
+        <item>LODHRAN</item>			<item>ATTOCK</item>			<item>JHELUM</item>
+        <item>RAWALPINDI</item>			<item>CHAKWAL</item>		<item>OKARA</item>
+        <item>SAHIWAL</item>			<item>PAKPATTAN</item>		<item>BHAKKAR</item>
+        <item>KHUSHAB</item>			<item>MIANWALI</item>		<item>SARGODHA</item>
+    </string-array>
+    <string-array name="DERA_GHAZI_KHAN_Tehseelname">
+		<item>DERA GHAZI KHAN</item>
+		<item>TAUNSA</item>
+	</string-array>
+    <string-array name="LAYYAH_Tehseelname">
+		<item>CHOUBARAH</item>
+		<item>KAROR LAL ESAN</item>
+		<item>LAYYAH</item>
+	</string-array>
+    <string-array name="MUZAFFAR_GARH_Tehseelname">
+		<item>ALI PUR</item>
+		<item>KOT ADU</item>
+		<item>MUZAFFAR GARH</item>
+		<item>JATOI</item>
+	</string-array>
+    <string-array name="RAJAN_PUR_Tehseelname">
+		<item>JAMPUR</item>
+		<item>RAJAN PUR</item>
+		<item>ROJHAN</item>
+	</string-array>
+    <string-array name="FAISALABAD_Tehseelname">
+		<item>FAISALABAD</item>
+		<item>SAMUNDRI</item>
+		<item>JARANWALA</item>
+		<item>TANDLIANWALA</item>
+		<item>CHAK JHUMRA</item>
+	</string-array>
+    <string-array name="JHANG_Tehseelname">
+		<item>JHANG</item>
+		<item>SHORKOT</item>
+		<item>AHMAD PUR SIAL</item>
+	</string-array>
+    <string-array name="T_T_SINGH_Tehseelname">
+		<item>TOBA TEK SINGH</item>
+		<item>GOJRA</item>
+		<item>KAMALIA</item>
+	</string-array>
+    <string-array name="CHINIOT_Tehseelname">
+		<item>CHINIOT</item>
+		<item>LALIAN</item>
+		<item>BHOWANA</item>
+	</string-array>
+    <string-array name="GUJRANWALA_Tehseelname">
+		<item>KAMOKE</item>
+		<item>GUJRANWALA</item>
+		<item>WAZIRABAD</item>
+		<item>NOWSHERA VIRKAN</item>
+	</string-array>
+    <string-array name="GUJRAT_Tehseelname">
+		<item>GUJRAT</item>
+		<item>KHARIAN</item>
+		<item>SARA I ALAMGIR</item>
+	</string-array>
+    <string-array name="SIALKOT_Tehseelname">
+		<item>SIALKOT</item>
+		<item>PASRUR</item>
+		<item>DASKA</item>
+		<item>SAMBRIAL</item>
+	</string-array>
+    <string-array name="NAROWAL_Tehseelname">
+		<item>NAROWAL</item>
+		<item>SHAKARGARH</item>
+		<item>ZAFARWAL</item>
+	</string-array>
+    <string-array name="HAFIZABAD_Tehseelname">
+		<item>HAFIZABAD</item>
+		<item>PINDI BHATTIAN</item>
+	</string-array>
+    <string-array name="MANDI_BAHUDDIN_Tehseelname">
+		<item>MANDI BAHA-UD-DIN</item>
+		<item>PHALIA</item>
+		<item>MALAKWAL</item>
+	</string-array>
+    <string-array name="KASUR_Tehseelname">
+		<item>KASUR</item>
+		<item>KOT RADHA KISHEN</item>
+		<item>CHUNIAN</item>
+		<item>PATTOKI</item>
+	</string-array>
+    <string-array name="LAHORE_Tehseelname">
+		<item>LAHORE CITY</item>
+		<item>LAHORE CANTT</item>
+	</string-array>
+    <string-array name="SHEIKHUPURA_Tehseelname">
+		<item>SHEIKHUPURA</item>
+		<item>SHARAQPUR</item>
+		<item>FEROZWALA</item>
+		<item>MURIDKE</item>
+	</string-array>
+
+    <string-array name="NANKANA_SAHIB_Tehseelname">
+		<item>NANKANA SAHIB</item>
+		<item>SANGLA HILL</item>
+		<item>MANDI DHABAN SINGH</item>
+		<item>SHAHKOT</item>
+	</string-array>
+    <string-array name="MULTAN_Tehseelname">
+		<item>MULTAN</item>
+		<item>SHUJA ABAD</item>
+		<item>JALALPUR PIRWALA</item>
+	</string-array>
+    <string-array name="KHANEWAL_Tehseelname">
+		<item>KHANEWAL</item>
+		<item>KABIRWALA</item>
+		<item>JAHANIAN</item>
+		<item>MIAN CHANNU</item>
+	</string-array>
+    <string-array name="VEHARI_Tehseelname">
+		<item>VEHARI</item>
+		<item>BUREWALA</item>
+		<item>MAILSI</item>
+	</string-array>
+    <string-array name="LODHRAN_Tehseelname">
+		<item>LODHRAN</item>
+		<item>DUNYAPUR</item>
+		<item>KEHRORE PACCA</item>
+	</string-array>
+    <string-array name="ATTOCK_Tehseelname">
+		<item>ATTOCK</item>
+		<item>HAZRO</item>
+		<item>HASSAN ABDAL</item>
+		<item>FATEH JANG</item>
+		<item>Pindi Gheb</item>
+		<item>JAND</item>
+	</string-array>
+   <string-array name="JHELUM_Tehseelname">
+		<item>Jhelum</item>
+		<item>Pind Dadan Khan</item>
+		<item>SOHAWA</item>
+		<item>DINA</item>
+	</string-array>
+    <string-array name="RAWALPINDI_Tehseelname">
+		<item>GUJAR KHAN</item>
+		<item>MURREE</item>
+		<item>KAHUTA</item>
+		<item>Kallar Syedan</item>
+		<item>TAXILA</item>
+		<item>RAWALPINDI</item>
+		<item>KOTLI SATTIAN</item>
+	</string-array>
+    <string-array name="CHAKWAL_Tehseelname">
+		<item>CHAKWAL</item>
+		<item>TALAGANG</item>
+		<item>Choa Syedan Shah</item>
+		<item>Kallar Kahar</item>
+	</string-array>
+    <string-array name="OKARA_Tehseelname">
+		<item>OKARA</item>
+		<item>DEPALPUR</item>
+		<item>RENALA KHURD</item>
+		<item>Yazman</item>
+		<item>Yazman</item>
+	</string-array>
+    <string-array name="SAHIWAL_Tehseelname">
+		<item>SAHIWAL</item>
+		<item>CHICHAWATNI</item>
+	</string-array>
+    <string-array name="PAKPATTAN_Tehseelname">
+		<item>ARIFWALA</item>
+		<item>PAKPATTAN</item>
+	</string-array>
+        <string-array name="BHAKKAR_Tehseelname">
+		<item>BHAKKAR</item>
+		<item>KALUR KOT</item>
+		<item>MANKERA</item>
+		<item>DARYA KHAN</item>
+	</string-array>
+        <string-array name="KHUSHAB_Tehseelname">
+		<item>KHUSHAB</item>
+		<item>NOORPUR-THAL</item>
+		<item>QAIDABAD</item>
+	</string-array>
+            <string-array name="MIANWALI_Tehseelname">
+		<item>MIANWALI</item>
+		<item>ISA-KHEL</item>
+		<item>PIPLAN</item>
+	</string-array>
+            <string-array name="SARGODHA_Tehseelname">
+		<item>SARGODHA</item>
+		<item>BHALWAL</item>
+		<item>KOTMOMAN</item>
+		<item>SAHIWAL</item>
+		<item>SHAHPUR SADAR</item>
+		<item>SILLANWALI</item>
+	</string-array>     
+    
+    <string-array name="Bahawalnagar_Tehseelname">
+        <item>Minchin Abad</item>
+        <item>Haroon Abad</item>
+        <item>Fort Abbas</item>
+        <item>Chishtian</item>
+		<item>Bahawalnagar</item>
+	</string-array>
+    <string-array name="Bahawalpur_Tehseelname">
+        <item>Ahmad Pur</item>
+		<item>Bahawalpur</item>
+		<item>Hasil Pur</item>
+		<item>Khair Pur</item>
+		<item>Yazman</item>
+	</string-array>   
+    <string-array name="Rahim_Yar_Khan_Tehseelname">
+		<item>Khan Pur</item>
+		<item>Liaquat Pur</item>
+		<item>Rahim Yar Khan</item>
+		<item>Sadiq Abad</item>
+	</string-array>
+    
+    <string-array name="country_codes">
+    <item>-</item>
+    <item>AR</item>
+    <item>AU</item>
+    <item>BR</item>
+    <item>BG</item>
+    <item>CA</item>
+    <item>CH</item>
+    <item>CN</item>
+    <item>CZ</item>
+    <item>DE</item>
+    <item>DK</item>
+    <item>ES</item>
+    <item>FI</item>
+    <item>FR</item>
+    <item>GB</item>
+    <item>GR</item>
+    <item>HU</item>
+    <item>ID</item>
+    <item>IT</item>
+    <item>JP</item>
+    <item>KR</item>
+    <item>NL</item>
+    <item>PL</item>
+    <item>PT</item>
+    <item>RO</item>    
+    <item>RU</item>
+    <item>SE</item>
+    <item>SK</item>
+    <item>SI</item>
+    <item>TR</item>
+    <item>TW</item>
+    <item>US</item>
+  </string-array>
+  <string-array name="preferences_front_light_values">
+    <item>ON</item>
+    <item>AUTO</item>
+    <item>OFF</item>
+  </string-array>
+  <string-array name="preferences_front_light_options">
+    <item>@string/preferences_front_light_on</item>
+    <item>@string/preferences_front_light_auto</item>
+    <item>@string/preferences_front_light_off</item>
+  </string-array>
+</resources>
