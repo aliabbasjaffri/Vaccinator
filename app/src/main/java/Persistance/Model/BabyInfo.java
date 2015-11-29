@@ -24,6 +24,9 @@ public class BabyInfo extends Model
     @Column(name = "FatherCNIC")
     public String fatherCNIC;
 
+    @Column(name = "FatherName")
+    public String fatherName;
+
     @Column(name = "ContactNumber")
     public String contactNumber;
 
@@ -47,4 +50,24 @@ public class BabyInfo extends Model
 
     @Column(name = "UpdateFlag")
     public boolean updateFlag;
+
+    public BabyInfo()
+    {
+        super();
+    }
+
+    public BabyInfo(String childID, String childName, String childDOB, boolean childGender, String fatherCNIC, String contactNumber, String address, String district, String tehsil)
+    {
+        super();
+
+        this.childID = childID;
+        this.childName = childName;
+        this.childDOB = childDOB;
+        this.childGender = childGender;
+        this.fatherCNIC = fatherCNIC;
+        this.contactNumber = contactNumber;
+        this.address = address;
+        this.district = district;
+        this.tehsil = tehsil;
+    }
 }

@@ -10,6 +10,7 @@
         android:xlargeScreens="true" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,17 +18,18 @@
         android:theme="@style/AppTheme" >
 
         <meta-data android:name="AA_DB_NAME" android:value="Database.db" />
-        <meta-data android:name="AA_DB_VERSION" android:value="1" />
-        <activity android:name="vaccine_process.Vaccine_record"  >
+        <meta-data android:name="AA_DB_VERSION" android:value="2" />
+        <meta-data android:name="AA_MODELS" android:value="Persistance.Model.BabyInfo"/>
 
 
-        </activity>
         <activity android:name=".Login_Activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="vaccine_process.Vaccine_record"  >
         </activity>
         <activity android:name=".Forget_Password_Activity" >
         </activity>

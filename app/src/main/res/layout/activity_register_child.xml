@@ -54,7 +54,7 @@ android:orientation="vertical" >
                 android:orientation="horizontal" >
 
                 <RadioGroup
-                    android:id="@+id/radioGroup1"
+                    android:id="@+id/radioGroup"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -97,7 +97,7 @@ android:orientation="vertical" >
                 android:textSize="17sp" />
 
             <EditText
-                android:id="@+id/dateofBirth"
+                android:id="@+id/dateofBirthRegisterChild"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -125,7 +125,7 @@ android:orientation="vertical" >
 
 
             <EditText
-                android:id="@+id/fatherName"
+                android:id="@+id/fatherNameRegisterChild"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLength="25"
@@ -147,7 +147,7 @@ android:orientation="vertical" >
                 android:textSize="17sp" />
 
             <EditText
-                android:id="@+id/fatherCnic"
+                android:id="@+id/fatherCnicRegisterChild"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="32106-3445556-2"
@@ -157,7 +157,6 @@ android:orientation="vertical" >
                 android:textAlignment="center" />
 
         </LinearLayout>
-
 
         <LinearLayout
             android:orientation="horizontal"
@@ -172,7 +171,7 @@ android:orientation="vertical" >
                 android:text="Father Mobile # " />
 
             <EditText
-                android:id="@+id/fatherMobile"
+                android:id="@+id/fatherMobileRegisterChild"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -195,7 +194,7 @@ android:orientation="vertical" >
                 android:text="Address: " />
 
             <EditText
-                android:id="@+id/address"
+                android:id="@+id/addressRegisterChild"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -218,7 +217,7 @@ android:orientation="vertical" >
                 android:gravity="center" />
 
             <Spinner
-                android:id="@+id/DistrictSpinner"
+                android:id="@+id/districtSpinnerRegisterChild"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:maxLength="50"
@@ -241,11 +240,12 @@ android:orientation="vertical" >
                 android:gravity="center" />
 
             <Spinner
-                android:id="@+id/TehseelSpinner"
+                android:id="@+id/tehseelSpinnerRegisterChild"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="45dp"
-                android:prompt="@string/tehseelpromespinner" />
+                android:prompt="@string/tehseelpromespinner"
+                android:entries="@array/Rahim_Yar_Khan_Tehseelname"/>
         </LinearLayout>
 
         <Button
@@ -258,7 +258,6 @@ android:orientation="vertical" >
             android:minHeight="45dp"
             android:textColor="@color/white"
             android:background="@color/Button_Theme_color"
-            android:onClick="Register_Child"
             />
 
 
