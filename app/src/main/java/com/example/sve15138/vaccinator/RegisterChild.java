@@ -10,24 +10,16 @@ import vaccine_process.Vaccine_record;
 public class RegisterChild extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_child);
-        setTitle("Regester Child");
-
-
-
-
+        setTitle("Register Child");
     }
-
-
 
     public void  Register_Child(View v)
     {
         Intent intent_Reg = new Intent(this, Vaccine_record.class);
         startActivity(intent_Reg);
-
-
     }
-
 }

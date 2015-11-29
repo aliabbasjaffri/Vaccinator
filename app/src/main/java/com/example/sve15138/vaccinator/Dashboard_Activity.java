@@ -13,7 +13,7 @@ public class Dashboard_Activity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        setTitle("My Day");
+        setTitle("Dashboard");
 
         Button registerChild = (Button)findViewById(R.id.registerChildDashBoard);
         Button updateChildInfo = (Button)findViewById(R.id.updateChildInfoDashBoard);

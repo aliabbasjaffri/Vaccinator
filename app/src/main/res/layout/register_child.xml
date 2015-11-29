@@ -4,19 +4,6 @@ android:layout_width="fill_parent"
 android:layout_height="fill_parent"
 android:orientation="vertical" >
 
-<TextView
-    android:layout_width="fill_parent"
-    android:layout_height="40dp"
-    android:background="@color/colorAccent"
-    android:gravity="left|center_vertical"
-    android:paddingLeft="10dp"
-    android:text="Child Data"
-    android:textSize="25sp"
-    android:textStyle="bold"
-    android:textColor="@color/white"
-    />
-
-
 <ScrollView
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -29,229 +16,237 @@ android:orientation="vertical" >
         android:orientation="vertical"
         android:padding="10dip" >
 
-
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Child ID"
-            android:textSize="18sp" />
-
         <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Child Name: "
+                android:textSize="17sp" />
 
             <EditText
-                android:id="@+id/cardID"
-                android:layout_width="0dip"
+                android:id="@+id/childNameRegisterChild"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:background="@drawable/textview"
-                android:hint="Enter Child ID"
-                android:inputType="number"
-                android:minHeight="45dp"
+                android:maxLength="25"
                 android:paddingLeft="10dp" />
-
-
 
         </LinearLayout>
 
-
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Child Name"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/childName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/textview"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="25"
-            android:minHeight="45dp"
-            android:paddingLeft="10dp" />
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Gender"
-            android:textSize="18sp" />
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:layout_height="match_parent">
 
-            <RadioGroup
-                android:id="@+id/radioGroup1"
-                android:layout_width="fill_parent"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textAlignment="center"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <RadioButton
-                    android:id="@+id/male"
-                    android:layout_width="0dp"
+                <RadioGroup
+                    android:id="@+id/radioGroup1"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:checked="true"
-                    android:text="@string/male"
-                    android:textColor="@color/Black" />
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/female"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="@string/female"
-                    android:textColor="@color/Black" />
+                    <RadioButton
+                        android:id="@+id/male"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:checked="true"
+                        android:text="@string/male"
+                        android:textColor="@color/Black"
+                        android:layout_gravity="right" />
 
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/female"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@string/female"
+                        android:textColor="@color/Black"
+                        android:layout_gravity="right" />
+
+                </RadioGroup>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Date of birth"
-            android:textSize="18sp" />
-
-
-        <EditText
-            android:id="@+id/dateofBirth"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/textview"
-            android:ems="10"
-            android:hint="2014-05-01"
-            android:inputType="date"
-            android:maxLength="10"
-            android:minHeight="45dp"
-            android:paddingLeft="10dp"
-            android:text=""
+            android:layout_height="match_parent">
 
-            android:singleLine="true" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Date of Birth: "
+                android:textSize="17sp" />
 
-        </EditText>
+            <EditText
+                android:id="@+id/dateofBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="2014-05-01"
+                android:inputType="date"
+                android:maxLength="10"
+                android:minHeight="45dp"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:gravity="center" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dip"
-            android:text="Father Name"
-            android:textSize="18sp" />
+        </LinearLayout>
 
-
-        <EditText
-            android:id="@+id/fatherName"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/textview"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="25"
-            android:minHeight="45dp"
-            android:paddingLeft="10dp" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dip"
-            android:text="Father CNIC"
-            android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Father Name: "
+                android:textSize="17sp"
+                android:layout_marginTop="10dp" />
 
-        <EditText
-            android:id="@+id/fatherCnic"
+
+            <EditText
+                android:id="@+id/fatherName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="25"
+                android:minHeight="45dp"
+                android:paddingLeft="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/textview"
-            android:ems="10"
-            android:hint="32106-3445556-2"
-            android:maxLength="15"
-            android:minHeight="45dp"
-            android:paddingLeft="10dp"
-            android:text=""
-            android:singleLine="true" />
+            android:layout_height="match_parent">
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Father CNIC"
+                android:textSize="17sp" />
 
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dip"
-            android:textSize="18sp"
-            android:text="Father Mobile #" />
-        <!--  Password TextField -->
+            <EditText
+                android:id="@+id/fatherCnic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="32106-3445556-2"
+                android:maxLength="15"
+                android:minHeight="45dp"
+                android:paddingLeft="10dp"
+                android:textAlignment="center" />
 
-        <EditText
-            android:id="@+id/fatherMobile"
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/textview"
-            android:ems="10"
-            android:inputType="number"
-            android:maxLength="13"
-            android:minHeight="45dp"
-            android:paddingLeft="10dp"
-            android:singleLine="true" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:layout_marginTop="15dip"
-            android:text="Address" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="17sp"
+                android:text="Father Mobile # " />
 
-        <EditText
-            android:id="@+id/address"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/textview"
-            android:inputType="text"
-            android:maxLength="50"
-            android:minHeight="45dp"
-            android:paddingLeft="10dp"
-            android:singleLine="true" />
+            <EditText
+                android:id="@+id/fatherMobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="13"
+                android:minHeight="45dp"
+                android:textAlignment="center" />
 
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:layout_marginTop="15dip"
-            android:text="District" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Spinner
-            android:id="@+id/DistrictSpinner"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/textview"
-            android:maxLength="50"
-            android:minHeight="45dp"
-            android:paddingLeft="10dp"
-            android:singleLine="true"
-            android:prompt="@string/districtpromespinner"
-            android:entries="@array/DistrictNames" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"
+                android:text="Address: " />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:layout_marginTop="15dip"
-            android:text="Tehseel" />
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:minHeight="45dp"
+                android:singleLine="false" />
 
-        <Spinner
-            android:id="@+id/TehseelSpinner"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/textview"
-            android:maxLength="50"
-            android:minHeight="45dp"
-            android:paddingLeft="10dp"
-            android:singleLine="true"
-            android:prompt="@string/tehseelpromespinner" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="17sp"
+                android:text="District   "
+                android:gravity="center" />
+
+            <Spinner
+                android:id="@+id/DistrictSpinner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="50"
+                android:minHeight="45dp"
+                android:prompt="@string/districtpromespinner"
+                android:entries="@array/DistrictNames" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="17sp"
+                android:text="Tehseel  "
+                android:gravity="center" />
+
+            <Spinner
+                android:id="@+id/TehseelSpinner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="45dp"
+                android:prompt="@string/tehseelpromespinner" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/BtnChildRecordSubmit"
