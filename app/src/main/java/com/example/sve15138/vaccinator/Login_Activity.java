@@ -5,16 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Dashboard_App extends AppCompatActivity
+public class Login_Activity extends AppCompatActivity
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_main);
 
         Button loginVerification = (Button) findViewById(R.id.Login_Submit);
         TextView forgetPassword = (TextView) findViewById(R.id.Forgetpassword);
@@ -22,7 +21,7 @@ public class Dashboard_App extends AppCompatActivity
         loginVerification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent_fpass = new Intent(Dashboard_App.this, Home_activity.class);
+                Intent intent_fpass = new Intent(Login_Activity.this, Dashboard_Activity.class);
                 startActivity(intent_fpass);
             }
         });
@@ -30,7 +29,7 @@ public class Dashboard_App extends AppCompatActivity
         forgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent_fpass = new Intent(Dashboard_App.this, Forget_pass_activity.class);
+                Intent intent_fpass = new Intent(Login_Activity.this, Forget_Password_Activity.class);
                 startActivity(intent_fpass);
             }
         });

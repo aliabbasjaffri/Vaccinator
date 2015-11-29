@@ -7,6 +7,12 @@
 
     <color name="Button_Theme_color">#0b0b2c</color>
 
+    <color name="registerchilddashboard_color">#12b2b2</color>
+    <color name="updatechildinfodashboard_color">#0099FF</color>
+    <color name="scanchilddashboard_color">#32ac71</color>
+    <color name="lostcarddashboard_color">#0288d1</color>
+    <color name="planmydaydashboard_color">#109169</color>
+
     <color name="white">#FFFFFF</color>
     <color name="yellow">#FFFF00</color>
     <color name="fuchsia">#FF00FF</color>

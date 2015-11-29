@@ -6,36 +6,33 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Home_activity extends AppCompatActivity {
-
+public class Dashboard_Activity extends AppCompatActivity
+{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_activity);
+        setContentView(R.layout.activity_dashboard);
 
         setTitle("My Day");
 
-        Button b1,b2,b3,b4,b5;
-        b1=(Button)findViewById(R.id.registorchild1);
-        b3=(Button)findViewById(R.id.scancard1);
-        b2=(Button)findViewById(R.id.scancard12);
-        b4=(Button)findViewById(R.id.plan_button);
-        b5=(Button)findViewById(R.id.update_child_info);
+        Button registerChild = (Button)findViewById(R.id.registerChildDashBoard);
+        Button updateChildInfo = (Button)findViewById(R.id.updateChildInfoDashBoard);
+        Button scanCard = (Button)findViewById(R.id.scanCardDashBoard);
+        Button lostCard = (Button)findViewById(R.id.lostCardDashBoard);
+        Button planMyDay = (Button)findViewById(R.id.planMyDayDashBoard);
 
-
-
-        b1.setOnClickListener(new View.OnClickListener() {
+        registerChild.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-              Intent i = new Intent(Home_activity.this, RegisterChild.class);
-               // i.putExtra("vaccinator_id", vaccinator_id);
+                Intent i = new Intent(Dashboard_Activity.this, RegisterChild.class);
+                // i.putExtra("vaccinator_id", vaccinator_id);
                 startActivity(i);
                 //finish();
             }
         });
 
-        b2.setOnClickListener(new View.OnClickListener() {
+        updateChildInfo.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
@@ -47,21 +44,21 @@ public class Home_activity extends AppCompatActivity {
         });
 
 
-        b3.setOnClickListener(new View.OnClickListener() {
+        scanCard.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View arg0) {
-                Intent i=new Intent(Home_activity.this,SearchChild.class);
-               // i.putExtra("vaccinator_id", vaccinator_id);
-               // i.putExtra("parent_key", 1); // parent activity main
+                Intent i = new Intent(Dashboard_Activity.this, SearchChild.class);
+                // i.putExtra("vaccinator_id", vaccinator_id);
+                // i.putExtra("parent_key", 1); // parent activity main
                 startActivity(i);
                 //	finish();*/
 
             }
         });
 
-        b4.setOnClickListener(new View.OnClickListener() {
+        lostCard.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
@@ -71,7 +68,7 @@ public class Home_activity extends AppCompatActivity {
                 //finish();*/
             }
         });
-        b5.setOnClickListener(new View.OnClickListener() {
+        planMyDay.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {

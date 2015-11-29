@@ -1,81 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="fill_parent"
-    android:background="@color/White"
-    android:orientation="vertical"
-    android:padding="5dp" >
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:background="@color/White"
+android:orientation="vertical"
+android:padding="5dp" >
 
     <LinearLayout
-        android:id="@+id/Login_logo"
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:orientation="vertical"
-        android:padding="5dp"
-        android:paddingTop="20dp">
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/Logo_Main"
-            android:src="@drawable/childimmunizationprogram" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/Login_Credentials_Layout"
+        android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        >
+        android:orientation="vertical" >
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:ems="10"
-            android:layout_gravity="center"
-            android:hint="Email address"
-            android:id="@+id/User_ID"
-            />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="Password"
-            android:layout_gravity="center"
-            android:ems="10"
-            android:id="@+id/User_Password"
-             />
-        
         <Button
+            android:id="@+id/registerChildDashBoard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="LOGIN"
-            android:id="@+id/Login_Submit"
-            android:background="@drawable/circular_button_login"
+            android:layout_height="fill_parent"
+            android:layout_margin="3dp"
+            android:background="@drawable/circular_button_registerchild"
+            android:drawableRight="@drawable/sad9"
+            android:paddingRight="15dp"
+            android:text="Register Child"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/white"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:padding="5dp"
-            />
+            android:textColor="#fafafa" />
 
-        <TextView
-            android:id="@+id/Forgetpassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:autoLink="web"
-            android:gravity="right"
-            android:layout_marginTop="10dp"
-            android:text="Forget Password"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/updateChildInfoDashBoard"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2dp"
+            android:background="@drawable/circular_button_updatechild"
+            android:drawableRight="@drawable/sad9"
+            android:paddingRight="15dp"
+            android:text="Update Child Info"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fafafa" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/scanCardDashBoard"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2dp"
+            android:background="@drawable/circular_button_scanchild"
+            android:drawableRight="@drawable/card"
+            android:paddingRight="15dp"
+            android:text="Scan Card"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fafafa" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/lostCardDashBoard"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/circular_button_lostcard"
+            android:drawableRight="@drawable/football92"
+            android:paddingRight="30dp"
+            android:text="Lost Card"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fafafa" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/planMyDayDashBoard"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/circular_button_planmyday"
+            android:drawableRight="@drawable/football92"
+            android:paddingRight="30dp"
+            android:text="Plan My Day!"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fafafa" />
+    </LinearLayout>
+
 </LinearLayout>
