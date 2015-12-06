@@ -24,18 +24,18 @@ import android.widget.TextView;
 
 import com.example.sve15138.vaccinator.R;
 
-import vaccine_process.Fragments.Fragment_09months;
-import vaccine_process.Fragments.Fragment_10week;
-import vaccine_process.Fragments.Fragment_14week;
-import vaccine_process.Fragments.Fragment_15months;
-import vaccine_process.Fragments.Fragment_6week;
-import vaccine_process.Fragments.Fragment_birth;
+import vaccine_process.Fragments.Fragment_FourthVisit;
+import vaccine_process.Fragments.Fragment_ThirdVisit;
+import vaccine_process.Fragments.Fragment_FifthVisit;
+import vaccine_process.Fragments.Fragment_SixthVisit;
+import vaccine_process.Fragments.Fragment_SecondVisit;
+import vaccine_process.Fragments.Fragment_BirthVisit;
 
 
 /**
  * Created by SVE15138 on 11/24/2015.
  */
-public class Vaccine_record extends AppCompatActivity implements Fragment_birth.OnFragmentInteractionListener, Fragment_15months.OnFragmentInteractionListener, Fragment_14week.OnFragmentInteractionListener, Fragment_10week.OnFragmentInteractionListener, Fragment_09months.OnFragmentInteractionListener, Fragment_6week.OnFragmentInteractionListener {
+public class Vaccine_record extends AppCompatActivity implements Fragment_BirthVisit.OnFragmentInteractionListener, Fragment_SixthVisit.OnFragmentInteractionListener, Fragment_FifthVisit.OnFragmentInteractionListener, Fragment_FourthVisit.OnFragmentInteractionListener, Fragment_ThirdVisit.OnFragmentInteractionListener, Fragment_SecondVisit.OnFragmentInteractionListener {
 
     CustomViewPager mViewPager;
     TabsPagerAdapter viewPagerAdapter;
@@ -78,14 +78,12 @@ public class Vaccine_record extends AppCompatActivity implements Fragment_birth.
 
 
         mViewPager.setOffscreenPageLimit(viewPagerAdapter.getCount() - 2);
-        mViewPager.setBackgroundColor(Color.parseColor("#3f355b"));
 
         //toolbar = (Toolbar) findViewById(R.id.baseActivityToolbarInclude);
         //mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
 
         tabLayout = (TabLayout) findViewById(R.id.VaccineProcessActivityTabLayoutInclude);
         tabLayout.setupWithViewPager(mViewPager);
-        tabLayout.setBackgroundColor(Color.parseColor("#f3f5f9"));
 
         mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 

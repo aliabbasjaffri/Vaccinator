@@ -8,9 +8,7 @@
 
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 
-        <item name="android:windowBackground">@color/background</item>
-
-
+        <item name="android:windowBackground">@color/White</item>
         <!-- color of line under the text field-->
         <item name="colorAccent">@color/colorAccent</item>
     </style>

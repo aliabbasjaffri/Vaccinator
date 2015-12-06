@@ -13,12 +13,12 @@ import com.example.sve15138.vaccinator.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Fragment_09months.OnFragmentInteractionListener} interface
+ * {@link Fragment_SecondVisit.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Fragment_09months#newInstance} factory method to
+ * Use the {@link Fragment_SecondVisit#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_09months extends Fragment {
+public class Fragment_SecondVisit extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -36,11 +36,11 @@ public class Fragment_09months extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment_09months.
+     * @return A new instance of fragment Fragment_SecondVisit.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_09months newInstance(String param1, String param2) {
-        Fragment_09months fragment = new Fragment_09months();
+    public static Fragment_SecondVisit newInstance(String param1, String param2) {
+        Fragment_SecondVisit fragment = new Fragment_SecondVisit();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -48,7 +48,7 @@ public class Fragment_09months extends Fragment {
         return fragment;
     }
 
-    public Fragment_09months() {
+    public Fragment_SecondVisit() {
         // Required empty public constructor
     }
 
@@ -65,21 +65,20 @@ public class Fragment_09months extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment_09months, container, false);
+        return inflater.inflate(R.layout.fragment_secondvisit, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction9(uri);
+            mListener.onFragmentInteraction6(uri);
         }
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-      //  this.getView().setBackgroundColor(Color.parseColor("#3232ff"));
-
+     //   this.getView().setBackgroundColor(Color.parseColor("#ea0200"));
 
         try {
             mListener = (OnFragmentInteractionListener) context;
@@ -107,7 +106,7 @@ public class Fragment_09months extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        public void onFragmentInteraction9(Uri uri);
+        public void onFragmentInteraction6(Uri uri);
     }
 
 }

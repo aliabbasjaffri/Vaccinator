@@ -7,12 +7,12 @@ import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import vaccine_process.Fragments.Fragment_09months;
-import vaccine_process.Fragments.Fragment_10week;
-import vaccine_process.Fragments.Fragment_14week;
-import vaccine_process.Fragments.Fragment_15months;
-import vaccine_process.Fragments.Fragment_6week;
-import vaccine_process.Fragments.Fragment_birth;
+import vaccine_process.Fragments.Fragment_FifthVisit;
+import vaccine_process.Fragments.Fragment_FourthVisit;
+import vaccine_process.Fragments.Fragment_SixthVisit;
+import vaccine_process.Fragments.Fragment_ThirdVisit;
+import vaccine_process.Fragments.Fragment_SecondVisit;
+import vaccine_process.Fragments.Fragment_BirthVisit;
 
 /**
  * Created by SVE15138 on 11/24/2015.
@@ -24,12 +24,12 @@ public class TabsPagerAdapter extends FragmentPagerAdapter
     public static Vaccine_record Vac;
     Bundle b;
     //	Fragment_child_info f=new Fragment_child_info();
-    Fragment_birth f0=new Fragment_birth();
-    Fragment_6week f1=new Fragment_6week();
-    Fragment_10week f2=new Fragment_10week();
-    Fragment_14week f3=new Fragment_14week();
-    Fragment_09months f4=new Fragment_09months();
-    Fragment_15months f5=new Fragment_15months();
+    Fragment_BirthVisit f0=new Fragment_BirthVisit();
+    Fragment_SecondVisit f1=new Fragment_SecondVisit();
+    Fragment_FourthVisit f2=new Fragment_FourthVisit();
+    Fragment_FifthVisit f3=new Fragment_FifthVisit();
+    Fragment_ThirdVisit f4=new Fragment_ThirdVisit();
+    Fragment_SixthVisit f5=new Fragment_SixthVisit();
 
 
     public TabsPagerAdapter(FragmentManager fm,Context context,Vaccine_record Vrecord,int child_id, int vaccinator_id,String gps)
@@ -53,21 +53,21 @@ public class TabsPagerAdapter extends FragmentPagerAdapter
         switch (index)
         {
             case 0:
-                return Fragment_birth.newInstance("","") ;
+                return Fragment_BirthVisit.newInstance("", "") ;
             case 1:
-                return Fragment_6week.newInstance("","");
+                return Fragment_SecondVisit.newInstance("", "");
             case 2:
                 //f2.setArguments(b);
-                return Fragment_10week.newInstance("","");
+                return Fragment_FourthVisit.newInstance("", "");
             case 3:
               //  f3.setArguments(b);
-                return  Fragment_14week.newInstance("","");
+                return  Fragment_FifthVisit.newInstance("", "");
             case 4:
                //f4.setArguments(b);
-                return Fragment_09months.newInstance("","");
+                return Fragment_ThirdVisit.newInstance("", "");
             case 5:
                 //f5.setArguments(b);
-                return Fragment_15months.newInstance("","");
+                return Fragment_SixthVisit.newInstance("", "");
         }
         return null;
     }

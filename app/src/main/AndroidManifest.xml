@@ -31,7 +31,7 @@
         </activity>
         <activity android:name="vaccine_process.Vaccine_record"  >
         </activity>
-        <activity android:name=".Forget_Password_Activity" >
+        <activity android:name=".ForgetPassword_Activity" >
         </activity>
         <activity android:name=".Dashboard_Activity" >
         </activity>

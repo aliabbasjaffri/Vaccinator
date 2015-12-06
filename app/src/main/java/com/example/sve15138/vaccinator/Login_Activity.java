@@ -29,7 +29,7 @@ public class Login_Activity extends AppCompatActivity
         forgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent_fpass = new Intent(Login_Activity.this, Forget_Password_Activity.class);
+                Intent intent_fpass = new Intent(Login_Activity.this, ForgetPassword_Activity.class);
                 startActivity(intent_fpass);
             }
         });

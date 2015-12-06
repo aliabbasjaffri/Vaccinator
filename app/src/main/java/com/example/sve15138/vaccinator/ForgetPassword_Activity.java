@@ -7,13 +7,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Forget_Password_Activity extends AppCompatActivity {
+public class ForgetPassword_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forget_pass);
+        setContentView(R.layout.activity_forgetpassword);
         setTitle("Forget Password");
 
         EditText resetEmailAddress = (EditText) findViewById(R.id.email_reset);
@@ -26,7 +26,7 @@ public class Forget_Password_Activity extends AppCompatActivity {
             {
                 if (resetAddress != null && resetAddress.contains("@"))
                 {
-                    Toast.makeText(Forget_Password_Activity.this , "A password reset request has been sent to your mentioned Email Address" , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ForgetPassword_Activity.this , "A password reset request has been sent to your mentioned Email Address" , Toast.LENGTH_SHORT).show();
 
                 }
             }
