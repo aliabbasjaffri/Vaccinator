@@ -1,8 +1,7 @@
 package Persistance.Model;
 
 import com.activeandroid.Model;
-import com.activeandroid.annotation.Column;
-import com.activeandroid.annotation.Table;
+import com.activeandroid.annotation.*;
 
 /**
  * Created by aliabbasjaffri on 30/11/15.
@@ -34,5 +33,17 @@ public class VacinatorInfo extends Model
     @Column(name = "UCID")
     public String ucID;
 
+    public VacinatorInfo(String regNumber, String name, String cnic, String contactNumber, String gender, String address, String supervisorID, String ucID)
+    {
+        super();
 
+        this.regNumber = regNumber;
+        this.name = name;
+        this.cnic = cnic;
+        this.contactNumber = contactNumber;
+        this.gender = gender;
+        this.address = address;
+        this.supervisorID = supervisorID;
+        this.ucID = ucID;
+    }
 }

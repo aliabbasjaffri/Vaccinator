@@ -1,8 +1,7 @@
 package Persistance.Model;
 
 import com.activeandroid.Model;
-import com.activeandroid.annotation.Column;
-import com.activeandroid.annotation.Table;
+import com.activeandroid.annotation.*;
 
 /**
  * Created by aliabbasjaffri on 30/11/15.
@@ -31,4 +30,16 @@ public class VaccinationSchedule extends Model
     @Column(name = "Comments")
     public boolean comments;
 
+    public VaccinationSchedule(String childID, String visitNumber, String vaccine1Name, String vaccine2Name, String vaccine3Name, boolean vaccinationStatus, boolean comments)
+    {
+        super();
+
+        this.childID = childID;
+        this.visitNumber = visitNumber;
+        this.vaccine1Name = vaccine1Name;
+        this.vaccine2Name = vaccine2Name;
+        this.vaccine3Name = vaccine3Name;
+        this.vaccinationStatus = vaccinationStatus;
+        this.comments = comments;
+    }
 }

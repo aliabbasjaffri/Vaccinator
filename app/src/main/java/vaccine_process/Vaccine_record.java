@@ -24,8 +24,12 @@ import android.widget.TextView;
 
 import com.example.sve15138.vaccinator.R;
 
-
-
+import vaccine_process.Fragments.Fragment_09months;
+import vaccine_process.Fragments.Fragment_10week;
+import vaccine_process.Fragments.Fragment_14week;
+import vaccine_process.Fragments.Fragment_15months;
+import vaccine_process.Fragments.Fragment_6week;
+import vaccine_process.Fragments.Fragment_birth;
 
 
 /**
@@ -37,24 +41,20 @@ public class Vaccine_record extends AppCompatActivity implements Fragment_birth.
     TabsPagerAdapter viewPagerAdapter;
     TabLayout tabLayout;
 
-
-   public TextView mTitle;
+    public TextView mTitle;
     Toolbar toolbar;
     protected  Vaccine_record instance;
 
-
-
     int child_id;
 
-    private String[] tabs = {/*"Info",*/ "Visit 1", "Visit 2", "Visit 3","Visit 4","Visit 5","Visit 6" };
+    private String[] tabs = {"Visit 1", "Visit 2", "Visit 3","Visit 4","Visit 5","Visit 6" };
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pager_xml);
-
 
         instance= this;
 
@@ -66,8 +66,6 @@ public class Vaccine_record extends AppCompatActivity implements Fragment_birth.
         child_id=124;//getIntent().getExtras().getInt("childid");
         int server_id=111;//getIntent().getExtras().getInt("serverid");
         int vaccinator_id=4191;//getIntent().getExtras().getInt("vaccinator_id");
-
-
 
         // calling and attaching stuffs
         //viewPager = (ViewPager) findViewById(R.id);
@@ -85,18 +83,9 @@ public class Vaccine_record extends AppCompatActivity implements Fragment_birth.
         //toolbar = (Toolbar) findViewById(R.id.baseActivityToolbarInclude);
         //mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
 
-            tabLayout = (TabLayout) findViewById(R.id.VaccineProcessActivityTabLayoutInclude);
-      tabLayout.setupWithViewPager(mViewPager);
+        tabLayout = (TabLayout) findViewById(R.id.VaccineProcessActivityTabLayoutInclude);
+        tabLayout.setupWithViewPager(mViewPager);
         tabLayout.setBackgroundColor(Color.parseColor("#f3f5f9"));
-
-
-
-
-
-       // setToolbar("Visit 1", false);
-
-
-
 
         mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
@@ -116,11 +105,6 @@ public class Vaccine_record extends AppCompatActivity implements Fragment_birth.
             public void onPageScrollStateChanged(int arg0) {
             }
         });
-
-
-
-
-
     }
 
 
@@ -135,7 +119,6 @@ public class Vaccine_record extends AppCompatActivity implements Fragment_birth.
 
             if (backButton)
             {
-
                 getSupportActionBar().setHomeButtonEnabled(true);
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -147,7 +130,6 @@ public class Vaccine_record extends AppCompatActivity implements Fragment_birth.
                 getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                 getSupportActionBar().setDisplayShowHomeEnabled(false);
             }
-
             toolbar.setNavigationOnClickListener(new View.OnClickListener()
             {
                 @Override
@@ -158,24 +140,6 @@ public class Vaccine_record extends AppCompatActivity implements Fragment_birth.
             });
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     @Override
     protected void onResume() {

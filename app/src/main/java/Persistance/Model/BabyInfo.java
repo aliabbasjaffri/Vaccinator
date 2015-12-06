@@ -56,7 +56,7 @@ public class BabyInfo extends Model
         super();
     }
 
-    public BabyInfo(String childID, String childName, String childDOB, boolean childGender, String fatherCNIC, String contactNumber, String address, String district, String tehsil)
+    public BabyInfo(String childID, String childName, String childDOB, boolean childGender, String fatherCNIC, String fatherName, String contactNumber, String address, String district, String tehsil)
     {
         super();
 
@@ -65,6 +65,7 @@ public class BabyInfo extends Model
         this.childDOB = childDOB;
         this.childGender = childGender;
         this.fatherCNIC = fatherCNIC;
+        this.fatherName = fatherName;
         this.contactNumber = contactNumber;
         this.address = address;
         this.district = district;

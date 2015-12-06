@@ -1,8 +1,6 @@
-package vaccine_process;
+package vaccine_process.Fragments;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,12 +13,12 @@ import com.example.sve15138.vaccinator.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Fragment_14week.OnFragmentInteractionListener} interface
+ * {@link Fragment_6week.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Fragment_14week#newInstance} factory method to
+ * Use the {@link Fragment_6week#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_14week extends Fragment {
+public class Fragment_6week extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -38,11 +36,11 @@ public class Fragment_14week extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment_14week.
+     * @return A new instance of fragment Fragment_6week.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_14week newInstance(String param1, String param2) {
-        Fragment_14week fragment = new Fragment_14week();
+    public static Fragment_6week newInstance(String param1, String param2) {
+        Fragment_6week fragment = new Fragment_6week();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -50,7 +48,7 @@ public class Fragment_14week extends Fragment {
         return fragment;
     }
 
-    public Fragment_14week() {
+    public Fragment_6week() {
         // Required empty public constructor
     }
 
@@ -67,20 +65,20 @@ public class Fragment_14week extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment_14week, container, false);
+        return inflater.inflate(R.layout.fragment_fragment_6week, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction14(uri);
+            mListener.onFragmentInteraction6(uri);
         }
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-       // this.getView().setBackgroundColor(Color.parseColor("#ffcc00"));
+     //   this.getView().setBackgroundColor(Color.parseColor("#ea0200"));
 
         try {
             mListener = (OnFragmentInteractionListener) context;
@@ -108,7 +106,7 @@ public class Fragment_14week extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        public void onFragmentInteraction14(Uri uri);
+        public void onFragmentInteraction6(Uri uri);
     }
 
 }

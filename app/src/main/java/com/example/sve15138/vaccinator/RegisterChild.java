@@ -3,6 +3,7 @@ package com.example.sve15138.vaccinator;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,26 +19,16 @@ import vaccine_process.Vaccine_record;
 
 public class RegisterChild extends AppCompatActivity
 {
-    private String childName;
-    private boolean childGender = false;                                //True for Male. False for Female
-    private String dateOfBirth;
-    private String fatherName;
-    private String fatherCNIC;
-    private String fatherMobile;
-    private String childAddress;
-    private String District;
-    private String Tehsil;
-
-    EditText childname;
-    RadioGroup radioSexGroup;
-    RadioButton radioButton;
-    EditText dateofbirth;
-    EditText fathername;
-    EditText fathercnic;
-    EditText fathermobile;
-    EditText childaddress;
-    Spinner district;
-    Spinner tehsil;
+    private EditText childname;
+    private RadioGroup radioSexGroup;
+    private RadioButton radioButton;
+    private EditText dateofbirth;
+    private EditText fathername;
+    private EditText fathercnic;
+    private EditText fathermobile;
+    private EditText childaddress;
+    private Spinner district;
+    private Spinner tehsil;
 
 
     @Override
@@ -47,31 +38,15 @@ public class RegisterChild extends AppCompatActivity
         setTitle("Register Child");
 
         childname = (EditText) findViewById(R.id.childNameRegisterChild);
-
         radioSexGroup = (RadioGroup) findViewById(R.id.radioGroup);
         radioButton = (RadioButton) findViewById(radioSexGroup.getCheckedRadioButtonId());
-
-
         dateofbirth = (EditText) findViewById(R.id.dateofBirthRegisterChild);
-
-
         fathername = (EditText) findViewById(R.id.fatherNameRegisterChild);
-
-
         fathercnic = (EditText) findViewById(R.id.fatherCnicRegisterChild);
-
-
         fathermobile = (EditText) findViewById(R.id.fatherMobileRegisterChild);
-
-
         childaddress = (EditText) findViewById(R.id.addressRegisterChild);
-
-
         district = (Spinner) findViewById(R.id.districtSpinnerRegisterChild);
-
-
         tehsil = (Spinner) findViewById(R.id.tehseelSpinnerRegisterChild);
-
 
         Button registerChild = (Button) findViewById(R.id.BtnChildRecordSubmit);
         registerChild.setOnClickListener(new View.OnClickListener() {
@@ -80,19 +55,25 @@ public class RegisterChild extends AppCompatActivity
             {
                 saveBaby();
 
-                BabyInfo query = new Select().from(BabyInfo.class).executeSingle();
-                Toast.makeText(RegisterChild.this , query.childName + " " + query.fatherName + "" + query.district, Toast.LENGTH_LONG ).show();
+                BabyInfo query = new Select().from(BabyInfo.class).where("ChildName = ?", childname.getText().toString()).executeSingle();
+
+                Log.i("Father Name" , query.fatherName );
+                Log.i("Name" , query.childName );
+                Log.i("Father CNIC", query.fatherCNIC);
+
+
+                //Toast.makeText(RegisterChild.this , query.childName + " " + query.fatherName + "" + query.district, Toast.LENGTH_LONG ).show();
                 startActivity(new Intent(RegisterChild.this, Vaccine_record.class));
             }
         });
     }
 
-    public void saveBaby()
+    private void saveBaby()
     {
-        childName = childname.getText().toString();
-
+        String childName = childname.getText().toString();
         String childgender = radioButton.getText().toString();
 
+        boolean childGender = false;
         switch(childgender)
         {
             case "male": childGender = true; break;
@@ -100,22 +81,20 @@ public class RegisterChild extends AppCompatActivity
             default: childGender = true; break;
         }
 
-        dateOfBirth = dateofbirth.getText().toString();
+        String dateOfBirth = dateofbirth.getText().toString();
+        String fatherName = fathername.getText().toString();
+        String fatherCNIC = fathercnic.getText().toString();
+        String fatherMobile = fathermobile.getText().toString();
+        String childAddress = childaddress.getText().toString();
+        String district1 = district.getSelectedItem().toString();
+        String tehsil1 = tehsil.getSelectedItem().toString();
 
-        fatherName = fathername.getText().toString();
+        Log.i("Name at Save" , childName );
+        Log.i("Father Name at Save" , fatherName );
+        Log.i("Father CNIC at Save" , fatherCNIC );
 
-        fatherCNIC = fathercnic.getText().toString();
-
-        fatherMobile = fathermobile.getText().toString();
-
-        childAddress = childaddress.getText().toString();
-
-        District = district.getSelectedItem().toString();
-
-        Tehsil = tehsil.getSelectedItem().toString();
-
-        BabyInfo newBabyRegistration = new BabyInfo( District + "111" , childName , dateOfBirth, childGender ,
-                fatherCNIC , fatherMobile , childAddress , District , Tehsil);
+        BabyInfo newBabyRegistration = new BabyInfo( district1 + "111" , childName, dateOfBirth, childGender,
+                fatherCNIC, fatherName, fatherMobile, childAddress, district1, tehsil1);
         newBabyRegistration.save();
     }
 }

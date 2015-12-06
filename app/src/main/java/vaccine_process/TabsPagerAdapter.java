@@ -7,13 +7,18 @@ import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import vaccine_process.Fragments.Fragment_09months;
+import vaccine_process.Fragments.Fragment_10week;
+import vaccine_process.Fragments.Fragment_14week;
+import vaccine_process.Fragments.Fragment_15months;
+import vaccine_process.Fragments.Fragment_6week;
+import vaccine_process.Fragments.Fragment_birth;
+
 /**
  * Created by SVE15138 on 11/24/2015.
  */
-public class TabsPagerAdapter extends FragmentPagerAdapter {
-
-
-
+public class TabsPagerAdapter extends FragmentPagerAdapter
+{
     private Context context;
     public static TabsPagerAdapter inst;
     public static Vaccine_record Vac;
@@ -27,7 +32,8 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
     Fragment_15months f5=new Fragment_15months();
 
 
-    public TabsPagerAdapter(FragmentManager fm,Context context,Vaccine_record Vrecord,int child_id, int vaccinator_id,String gps) {
+    public TabsPagerAdapter(FragmentManager fm,Context context,Vaccine_record Vrecord,int child_id, int vaccinator_id,String gps)
+    {
         super(fm);
 
         inst =this;
@@ -38,23 +44,17 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
         b.putInt("childid", child_id);
         b.putInt("vaccinator_id", vaccinator_id);
         b.putString("gps", gps);
-
     }
 
 
     @Override
-    public Fragment getItem(int index) {
-
-
-        switch (index) {
-            //case 0:
-            //f.setArguments(b);
-            //return f;
+    public Fragment getItem(int index)
+    {
+        switch (index)
+        {
             case 0:
-               //f0.setArguments(b);
                 return Fragment_birth.newInstance("","") ;
             case 1:
-               //f1.setArguments(b);
                 return Fragment_6week.newInstance("","");
             case 2:
                 //f2.setArguments(b);

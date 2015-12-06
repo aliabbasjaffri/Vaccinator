@@ -18,8 +18,8 @@
         android:theme="@style/AppTheme" >
 
         <meta-data android:name="AA_DB_NAME" android:value="Database.db" />
-        <meta-data android:name="AA_DB_VERSION" android:value="2" />
-        <meta-data android:name="AA_MODELS" android:value="Persistance.Model.BabyInfo"/>
+        <meta-data android:name="AA_DB_VERSION" android:value="3" />
+        <meta-data android:name="AA_MODELS" android:value="Persistance.Model.BabyInfo , Persistance.Model.VaccinationSchedule , Persistance.Model.VacinatorInfo , Persistance.Model.Visit"/>
 
 
         <activity android:name=".Login_Activity" >
