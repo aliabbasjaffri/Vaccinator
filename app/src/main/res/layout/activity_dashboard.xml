@@ -34,7 +34,7 @@ android:padding="5dp" >
         android:orientation="vertical" >
 
         <Button
-            android:id="@+id/updateChildInfoDashBoard"
+            android:id="@+id/currentUCChildrenDashBoard"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"

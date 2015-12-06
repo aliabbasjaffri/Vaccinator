@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.sve15138.vaccinator.SecondTab.MainActivity;
+
 public class Dashboard_Activity extends AppCompatActivity
 {
     @Override
@@ -16,7 +18,7 @@ public class Dashboard_Activity extends AppCompatActivity
         setTitle("Dashboard");
 
         Button registerChild = (Button)findViewById(R.id.registerChildDashBoard);
-        Button updateChildInfo = (Button)findViewById(R.id.updateChildInfoDashBoard);
+        Button currentUCChildren = (Button)findViewById(R.id.currentUCChildrenDashBoard);
         Button scanCard = (Button)findViewById(R.id.scanCardDashBoard);
         Button lostCard = (Button)findViewById(R.id.lostCardDashBoard);
         Button planMyDay = (Button)findViewById(R.id.planMyDayDashBoard);
@@ -25,14 +27,16 @@ public class Dashboard_Activity extends AppCompatActivity
         {
             @Override
             public void onClick(View arg0) {
-                Intent i = new Intent(Dashboard_Activity.this, RegisterChild_Activity.class);
-                startActivity(i);
+                startActivity(new Intent(Dashboard_Activity.this, RegisterChild_Activity.class));
             }
         });
 
-        updateChildInfo.setOnClickListener(new View.OnClickListener() {
+        currentUCChildren.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View arg0) {
+            public void onClick(View arg0)
+            {
+                startActivity(new Intent( Dashboard_Activity.this , MainActivity.class));
             }
         });
 
