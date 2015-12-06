@@ -25,7 +25,7 @@ public class Dashboard_Activity extends AppCompatActivity
 
             @Override
             public void onClick(View arg0) {
-                Intent i = new Intent(Dashboard_Activity.this, RegisterChild.class);
+                Intent i = new Intent(Dashboard_Activity.this, RegisterChild_Activity.class);
                 // i.putExtra("vaccinator_id", vaccinator_id);
                 startActivity(i);
                 //finish();
@@ -49,7 +49,7 @@ public class Dashboard_Activity extends AppCompatActivity
 
             @Override
             public void onClick(View arg0) {
-                Intent i = new Intent(Dashboard_Activity.this, SearchChild.class);
+                Intent i = new Intent(Dashboard_Activity.this, SearchChild_Activity.class);
                 // i.putExtra("vaccinator_id", vaccinator_id);
                 // i.putExtra("parent_key", 1); // parent activity main
                 startActivity(i);

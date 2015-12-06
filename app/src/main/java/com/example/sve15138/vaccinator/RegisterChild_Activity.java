@@ -10,14 +10,13 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.activeandroid.query.Select;
 
 import Persistance.Model.BabyInfo;
 import vaccine_process.Vaccine_record;
 
-public class RegisterChild extends AppCompatActivity
+public class RegisterChild_Activity extends AppCompatActivity
 {
     private EditText childname;
     private RadioGroup radioSexGroup;
@@ -34,7 +33,7 @@ public class RegisterChild extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_child);
+        setContentView(R.layout.activity_registerchild);
         setTitle("Register Child");
 
         childname = (EditText) findViewById(R.id.childNameRegisterChild);
@@ -58,12 +57,12 @@ public class RegisterChild extends AppCompatActivity
                 BabyInfo query = new Select().from(BabyInfo.class).where("ChildName = ?", childname.getText().toString()).executeSingle();
 
                 Log.i("Father Name" , query.fatherName );
-                Log.i("Name" , query.childName );
+                Log.i("Name", query.childName);
                 Log.i("Father CNIC", query.fatherCNIC);
 
 
-                //Toast.makeText(RegisterChild.this , query.childName + " " + query.fatherName + "" + query.district, Toast.LENGTH_LONG ).show();
-                startActivity(new Intent(RegisterChild.this, Vaccine_record.class));
+                //Toast.makeText(RegisterChild_Activity.this , query.childName + " " + query.fatherName + "" + query.district, Toast.LENGTH_LONG ).show();
+                startActivity(new Intent(RegisterChild_Activity.this, Vaccine_record.class));
             }
         });
     }

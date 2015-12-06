@@ -35,9 +35,9 @@
         </activity>
         <activity android:name=".Dashboard_Activity" >
         </activity>
-        <activity android:name=".RegisterChild" >
+        <activity android:name=".RegisterChild_Activity" >
         </activity>
-        <activity android:name=".SearchChild" >
+        <activity android:name=".SearchChild_Activity" >
         </activity>
 
 

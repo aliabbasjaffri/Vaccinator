@@ -257,7 +257,7 @@ android:orientation="vertical" >
             android:textStyle="bold"
             android:minHeight="45dp"
             android:textColor="@color/white"
-            android:background="@color/Button_Theme_color"
+            android:background="@drawable/circular_button"
             />
 
 
