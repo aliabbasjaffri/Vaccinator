@@ -1,7 +1,7 @@
 package vaccine_process;
 
 import android.content.Context;
-import android.graphics.Color;
+import android.content.Intent;
 import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
@@ -35,20 +35,19 @@ import vaccine_process.Fragments.Fragment_BirthVisit;
 /**
  * Created by SVE15138 on 11/24/2015.
  */
-public class Vaccine_record extends AppCompatActivity implements Fragment_BirthVisit.OnFragmentInteractionListener, Fragment_SixthVisit.OnFragmentInteractionListener, Fragment_FifthVisit.OnFragmentInteractionListener, Fragment_FourthVisit.OnFragmentInteractionListener, Fragment_ThirdVisit.OnFragmentInteractionListener, Fragment_SecondVisit.OnFragmentInteractionListener {
+public class VaccineRecord extends AppCompatActivity implements Fragment_BirthVisit.OnFragmentInteractionListener, Fragment_SixthVisit.OnFragmentInteractionListener, Fragment_FifthVisit.OnFragmentInteractionListener, Fragment_FourthVisit.OnFragmentInteractionListener, Fragment_ThirdVisit.OnFragmentInteractionListener, Fragment_SecondVisit.OnFragmentInteractionListener {
 
-    CustomViewPager mViewPager;
-    TabsPagerAdapter viewPagerAdapter;
-    TabLayout tabLayout;
+    private CustomViewPager mViewPager;
+    private TabsPagerAdapter viewPagerAdapter;
+    private TabLayout tabLayout;
 
     public TextView mTitle;
-    Toolbar toolbar;
-    protected  Vaccine_record instance;
+    private Toolbar toolbar;
+    protected VaccineRecord instance;
 
-    int child_id;
-
-    private String[] tabs = {"Visit 1", "Visit 2", "Visit 3","Visit 4","Visit 5","Visit 6" };
-
+    private TextView childID;
+    private TextView childName;
+    private TextView fatherName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -56,31 +55,29 @@ public class Vaccine_record extends AppCompatActivity implements Fragment_BirthV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pager_xml);
 
-        instance= this;
+        instance = this;
 
         WindowManager wm = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
 
-        child_id=124;//getIntent().getExtras().getInt("childid");
-        int server_id=111;//getIntent().getExtras().getInt("serverid");
-        int vaccinator_id=4191;//getIntent().getExtras().getInt("vaccinator_id");
+        childID = (TextView) findViewById(R.id.pager_childID_textview);
+        childName = (TextView) findViewById(R.id.pager_childname_textview);
+        fatherName = (TextView) findViewById(R.id.pager_fathername_textview);
 
-        // calling and attaching stuffs
-        //viewPager = (ViewPager) findViewById(R.id);
-       // this.getApplicationContext() , instance
+        Intent i = getIntent();
+
+        childID.setText( i.getStringExtra("childID") );
+        childName.setText( i.getStringExtra("childName") );
+        fatherName.setText( i.getStringExtra("fatherName") );
 
         mViewPager = (CustomViewPager) findViewById(R.id.view_pager);
-        viewPagerAdapter = new TabsPagerAdapter(getSupportFragmentManager(), this.getApplicationContext() , instance,123,99,"abc" );
+        viewPagerAdapter = new TabsPagerAdapter(getSupportFragmentManager(), this.getApplicationContext() , instance );
         mViewPager.setAdapter(viewPagerAdapter);
-        mViewPager.setPagingEnabled(true);
-
+        mViewPager.setPagingEnabled(false);
 
         mViewPager.setOffscreenPageLimit(viewPagerAdapter.getCount() - 2);
-
-        //toolbar = (Toolbar) findViewById(R.id.baseActivityToolbarInclude);
-        //mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
 
         tabLayout = (TabLayout) findViewById(R.id.VaccineProcessActivityTabLayoutInclude);
         tabLayout.setupWithViewPager(mViewPager);

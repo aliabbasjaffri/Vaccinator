@@ -10,11 +10,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.activeandroid.query.Select;
 
 import Persistance.Model.BabyInfo;
-import vaccine_process.Vaccine_record;
+import vaccine_process.VaccineRecord;
 
 public class RegisterChild_Activity extends AppCompatActivity
 {
@@ -28,6 +29,17 @@ public class RegisterChild_Activity extends AppCompatActivity
     private EditText childaddress;
     private Spinner district;
     private Spinner tehsil;
+
+    String childName;
+    String childID;
+    String childgender;
+    String dateOfBirth;
+    String fatherName;
+    String fatherCNIC;
+    String fatherMobile;
+    String childAddress;
+    String district1;
+    String tehsil1;
 
 
     @Override
@@ -47,6 +59,8 @@ public class RegisterChild_Activity extends AppCompatActivity
         district = (Spinner) findViewById(R.id.districtSpinnerRegisterChild);
         tehsil = (Spinner) findViewById(R.id.tehseelSpinnerRegisterChild);
 
+        childName = childgender = dateOfBirth = fatherName = fatherCNIC = fatherMobile = childAddress = district1 = tehsil1 = "";
+
         Button registerChild = (Button) findViewById(R.id.BtnChildRecordSubmit);
         registerChild.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,21 +70,22 @@ public class RegisterChild_Activity extends AppCompatActivity
 
                 BabyInfo query = new Select().from(BabyInfo.class).where("ChildName = ?", childname.getText().toString()).executeSingle();
 
-                Log.i("Father Name" , query.fatherName );
-                Log.i("Name", query.childName);
-                Log.i("Father CNIC", query.fatherCNIC);
-
-
-                //Toast.makeText(RegisterChild_Activity.this , query.childName + " " + query.fatherName + "" + query.district, Toast.LENGTH_LONG ).show();
-                startActivity(new Intent(RegisterChild_Activity.this, Vaccine_record.class));
+                if( query.childID != "" && query.childName != "" && query.fatherName != "" ){
+                    startActivity(new Intent(RegisterChild_Activity.this, VaccineRecord.class)
+                            .putExtra("childID", childID )
+                            .putExtra("childName" , childName )
+                            .putExtra("fatherName" , fatherName ));
+                }
+                else
+                    Toast.makeText(RegisterChild_Activity.this , "Please enter all required values" , Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void saveBaby()
     {
-        String childName = childname.getText().toString();
-        String childgender = radioButton.getText().toString();
+        childName = childname.getText().toString();
+        childgender = radioButton.getText().toString();
 
         boolean childGender = false;
         switch(childgender)
@@ -80,19 +95,16 @@ public class RegisterChild_Activity extends AppCompatActivity
             default: childGender = true; break;
         }
 
-        String dateOfBirth = dateofbirth.getText().toString();
-        String fatherName = fathername.getText().toString();
-        String fatherCNIC = fathercnic.getText().toString();
-        String fatherMobile = fathermobile.getText().toString();
-        String childAddress = childaddress.getText().toString();
-        String district1 = district.getSelectedItem().toString();
-        String tehsil1 = tehsil.getSelectedItem().toString();
+        childID = district1 + "111";
+        dateOfBirth = dateofbirth.getText().toString();
+        fatherName = fathername.getText().toString();
+        fatherCNIC = fathercnic.getText().toString();
+        fatherMobile = fathermobile.getText().toString();
+        childAddress = childaddress.getText().toString();
+        district1 = district.getSelectedItem().toString();
+        tehsil1 = tehsil.getSelectedItem().toString();
 
-        Log.i("Name at Save" , childName );
-        Log.i("Father Name at Save" , fatherName );
-        Log.i("Father CNIC at Save" , fatherCNIC );
-
-        BabyInfo newBabyRegistration = new BabyInfo( district1 + "111" , childName, dateOfBirth, childGender,
+        BabyInfo newBabyRegistration = new BabyInfo( childID , childName, dateOfBirth, childGender,
                 fatherCNIC, fatherName, fatherMobile, childAddress, district1, tehsil1);
         newBabyRegistration.save();
     }

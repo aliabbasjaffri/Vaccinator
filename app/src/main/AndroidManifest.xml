@@ -29,7 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="vaccine_process.Vaccine_record"  >
+        <activity android:name="vaccine_process.VaccineRecord"  >
         </activity>
         <activity android:name=".ForgetPassword_Activity" >
         </activity>
