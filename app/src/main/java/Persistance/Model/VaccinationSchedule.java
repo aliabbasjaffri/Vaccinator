@@ -30,6 +30,11 @@ public class VaccinationSchedule extends Model
     @Column(name = "Comments")
     public boolean comments;
 
+    public VaccinationSchedule()
+    {
+        super();
+    }
+
     public VaccinationSchedule(String childID, String visitNumber, String vaccine1Name, String vaccine2Name, String vaccine3Name, boolean vaccinationStatus, boolean comments)
     {
         super();

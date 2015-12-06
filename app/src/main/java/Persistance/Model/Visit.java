@@ -33,6 +33,11 @@ public class Visit extends Model
     @Column(name = "Comments")
     public String comments;
 
+    public Visit()
+    {
+        super();
+    }
+
     public Visit(String childID, String vaccinatorID, String bhuID, String ucID, String location, String date, String nextDueDate, String comments)
     {
         super();

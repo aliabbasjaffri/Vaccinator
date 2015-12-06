@@ -6,8 +6,8 @@ import com.activeandroid.annotation.*;
 /**
  * Created by aliabbasjaffri on 30/11/15.
  */
-@Table(name = "VacinatorInfo")
-public class VacinatorInfo extends Model
+@Table(name = "VaccinatorInfo")
+public class VaccinatorInfo extends Model
 {
     @Column(name = "RegNumber")
     public String regNumber;
@@ -33,7 +33,12 @@ public class VacinatorInfo extends Model
     @Column(name = "UCID")
     public String ucID;
 
-    public VacinatorInfo(String regNumber, String name, String cnic, String contactNumber, String gender, String address, String supervisorID, String ucID)
+    public VaccinatorInfo()
+    {
+        super();
+    }
+
+    public VaccinatorInfo(String regNumber, String name, String cnic, String contactNumber, String gender, String address, String supervisorID, String ucID)
     {
         super();
 
