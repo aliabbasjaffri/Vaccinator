@@ -61,7 +61,7 @@
             android:layout_gravity="right"
             android:gravity="center"
             android:layout_weight="2"
-            android:layout_marginRight="20dp" />
+            android:layout_marginRight="25dp" />
 
         <Button
             android:id="@+id/secondtab_row_details"

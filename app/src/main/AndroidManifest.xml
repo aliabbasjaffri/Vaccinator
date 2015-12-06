@@ -33,14 +33,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="vaccine_process.VaccineRecord"></activity>
-        <activity android:name=".ForgetPassword_Activity"></activity>
-        <activity android:name=".Dashboard_Activity"></activity>
-        <activity android:name=".RegisterChild_Activity"></activity>
-        <activity android:name=".SearchChild_Activity"></activity>
+        <activity android:name="vaccine_process.VaccineRecord" />
+        <activity android:name=".ForgetPassword_Activity" />
+        <activity android:name=".Dashboard_Activity" />
+        <activity android:name=".RegisterChild_Activity" />
+        <activity android:name=".SearchChild_Activity" />
         <activity
             android:name=".SecondTab.MainActivity"
-            android:label="@string/title_activity_main"></activity>
+            android:label="@string/title_activity_main" />
+        <activity android:name=".ProfileView.ProfileView"></activity>
     </application>
 
 </manifest>
