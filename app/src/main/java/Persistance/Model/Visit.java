@@ -24,6 +24,12 @@ public class Visit extends Model
     @Column(name = "Location")
     public String location;
 
+    @Column(name = "VisitNumber")
+    public String visitNumber;
+
+    @Column(name = "Vaccinations")
+    public String vaccinations;
+
     @Column(name = "Date")
     public String date;
 
