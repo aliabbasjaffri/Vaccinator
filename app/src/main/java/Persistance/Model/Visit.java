@@ -44,7 +44,7 @@ public class Visit extends Model
         super();
     }
 
-    public Visit(String childID, String vaccinatorID, String bhuID, String ucID, String location, String date, String nextDueDate, String comments)
+    public Visit(String childID, String vaccinatorID, String bhuID, String ucID, String location, String visitNumber , String vaccinations , String date, String nextDueDate, String comments)
     {
         super();
 
@@ -53,6 +53,8 @@ public class Visit extends Model
         this.bhuID = bhuID;
         this.ucID = ucID;
         this.location = location;
+        this.visitNumber = visitNumber;
+        this.vaccinations = vaccinations;
         this.date = date;
         this.nextDueDate = nextDueDate;
         this.comments = comments;

@@ -34,7 +34,7 @@ public class SecondTabMainAdapter extends ArrayAdapter
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent)
+    public View getView(final int position, View convertView, ViewGroup parent)
     {
         LayoutInflater inflater = ((AppCompatActivity) context).getLayoutInflater();
         View row = inflater.inflate(XML_ID, parent, false);
@@ -54,8 +54,9 @@ public class SecondTabMainAdapter extends ArrayAdapter
             @Override
             public void onClick(View v)
             {
-                ((MainActivity)context).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.secondtab_main_frameLayout, new ProfileView())
+                ((MainActivity)context).getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.secondtab_main_frameLayout, ProfileView.newInstance(data.get(position).getChildID()))
                         .addToBackStack(ProfileView.class.getName())
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .commit();
