@@ -22,10 +22,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.activeandroid.query.Select;
 import com.example.sve15138.vaccinator.R;
 
-import Persistance.Model.BabyInfo;
 import vaccine_process.Fragments.Fragment_FourthVisit;
 import vaccine_process.Fragments.Fragment_ThirdVisit;
 import vaccine_process.Fragments.Fragment_FifthVisit;
@@ -51,8 +49,6 @@ public class VaccineRecord extends AppCompatActivity implements Fragment_BirthVi
     private TextView childName;
     private TextView fatherName;
 
-    public String child_ID;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -70,16 +66,11 @@ public class VaccineRecord extends AppCompatActivity implements Fragment_BirthVi
         childName = (TextView) findViewById(R.id.pager_childname_textview);
         fatherName = (TextView) findViewById(R.id.pager_fathername_textview);
 
-        child_ID = getIntent().getStringExtra("childID");
+        Intent i = getIntent();
 
-        BabyInfo info = new Select().from(BabyInfo.class).where("ChildID = ?", child_ID).executeSingle();
-
-        if( info.equals(null) )
-        {
-            childID.setText( info.childID );
-            childName.setText( info.childName );
-            fatherName.setText( info.fatherName );
-        }
+        childID.setText( i.getStringExtra("childID") );
+        childName.setText( i.getStringExtra("childName") );
+        fatherName.setText( i.getStringExtra("fatherName") );
 
         mViewPager = (CustomViewPager) findViewById(R.id.view_pager);
         viewPagerAdapter = new TabsPagerAdapter(getSupportFragmentManager(), this.getApplicationContext() , instance );
