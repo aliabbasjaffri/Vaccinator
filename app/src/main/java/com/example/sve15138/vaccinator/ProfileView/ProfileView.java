@@ -1,5 +1,7 @@
 package com.example.sve15138.vaccinator.ProfileView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.os.Bundle;
 import android.view.ViewGroup;
@@ -10,10 +12,13 @@ import android.support.v4.app.Fragment;
 
 import com.activeandroid.query.Select;
 import com.example.sve15138.vaccinator.R;
+import com.example.sve15138.vaccinator.SecondTab.MainActivity;
+
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 import Persistance.Model.BabyInfo;
+import vaccine_process.VaccineRecord;
 
 public class ProfileView extends Fragment
 {
@@ -58,6 +63,7 @@ public class ProfileView extends Fragment
         {
             childIDParam = getArguments().getString(ARG_PARAM);
         }
+
     }
 
     @Nullable
@@ -71,20 +77,42 @@ public class ProfileView extends Fragment
         Toast.makeText(getActivity().getApplicationContext() , info.childName + " " + info.district , Toast.LENGTH_LONG).show();
 
         childName = (TextView) view.findViewById(R.id.profile_childName);
+        childName.setText(info.childName);
+
         childID = (TextView) view.findViewById(R.id.profile_childID);
+        childID.setText(info.childID);
+
         fatherName = (TextView) view.findViewById(R.id.profile_fatherName);
+        fatherName.setText(info.fatherName);
+
         fatherCNIC = (TextView) view.findViewById(R.id.profile_fatherID);
+        fatherCNIC.setText(info.fatherCNIC);
+
         address = (TextView) view.findViewById(R.id.profile_address);
+        address.setText(info.address);
+
         district = (TextView) view.findViewById(R.id.profile_district);
+        district.setText(info.district);
+
         tehsil = (TextView) view.findViewById(R.id.profile_tehsil);
+        tehsil.setText(info.tehsil);
+
         childVaccinationHistory = (Button) view.findViewById(R.id.profile_vaccinationHistory);
+        
 
 
         childVaccinationHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                
+                Intent itn=new Intent(getActivity(),VaccineRecord.class);
+
+                itn.putExtra("childID", childID.getText().toString());
+                itn.putExtra("childName", childName.getText().toString());
+                itn.putExtra("fatherName", fatherName.getText().toString());
+                startActivity(itn);
+
+
             }
         });
 
