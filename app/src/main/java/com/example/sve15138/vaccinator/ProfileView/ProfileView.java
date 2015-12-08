@@ -1,5 +1,6 @@
 package com.example.sve15138.vaccinator.ProfileView;
 
+import android.content.Intent;
 import android.view.View;
 import android.os.Bundle;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 import Persistance.Model.BabyInfo;
+import vaccine_process.VaccineRecord;
 
 public class ProfileView extends Fragment
 {
@@ -66,9 +68,7 @@ public class ProfileView extends Fragment
     {
         View view = inflater.inflate(R.layout.fragment_profileview , container , false);
 
-        BabyInfo info = new Select().from(BabyInfo.class).where("ChildID = ?" , childIDParam).executeSingle();
-
-        Toast.makeText(getActivity().getApplicationContext() , info.childName + " " + info.district , Toast.LENGTH_LONG).show();
+        final BabyInfo info = new Select().from(BabyInfo.class).where("ChildID = ?" , childIDParam).executeSingle();
 
         childName = (TextView) view.findViewById(R.id.profile_childName);
         childID = (TextView) view.findViewById(R.id.profile_childID);
@@ -79,14 +79,27 @@ public class ProfileView extends Fragment
         tehsil = (TextView) view.findViewById(R.id.profile_tehsil);
         childVaccinationHistory = (Button) view.findViewById(R.id.profile_vaccinationHistory);
 
+        if(!info.equals(null))
+        {
+            childName.setText(info.childName);
+            childID.setText(info.childID);
+            fatherName.setText(info.fatherName);
+            fatherCNIC.setText(info.fatherCNIC);
+            address.setText(info.address);
+            district.setText(info.district);
+            tehsil.setText(info.tehsil);
 
-        childVaccinationHistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                
-            }
-        });
+            childVaccinationHistory.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v)
+                {
+                    startActivity(new Intent(getActivity(), VaccineRecord.class).putExtra("childID", info.childID));
+                }
+            });
+        }
+        else
+            Toast.makeText(getActivity().getApplicationContext() , "No such baby exists in record." , Toast.LENGTH_LONG)
+                    .show();
 
         return view;
     }

@@ -72,9 +72,7 @@ public class RegisterChild_Activity extends AppCompatActivity
 
                 if( query.childID != "" && query.childName != "" && query.fatherName != "" ){
                     startActivity(new Intent(RegisterChild_Activity.this, VaccineRecord.class)
-                            .putExtra("childID", childID )
-                            .putExtra("childName" , childName )
-                            .putExtra("fatherName" , fatherName ));
+                            .putExtra("childID", childID ));
                 }
                 else
                     Toast.makeText(RegisterChild_Activity.this , "Please enter all required values" , Toast.LENGTH_SHORT).show();
