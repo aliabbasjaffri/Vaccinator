@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sve15138.vaccinator">
+    package="com.example.sve15138.vaccinator" >
 
     <supports-screens
         android:anyDensity="true"
@@ -9,13 +9,15 @@
         android:smallScreens="true"
         android:xlargeScreens="true" />
 
+    <uses-permission android:name="android.permission.NFC" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <meta-data
             android:name="AA_DB_NAME"
             android:value="Database.db" />
@@ -26,7 +28,7 @@
             android:name="AA_MODELS"
             android:value="Persistance.Model.BabyInfo , Persistance.Model.VaccinationSchedule , Persistance.Model.VacinatorInfo , Persistance.Model.Visit" />
 
-        <activity android:name=".Login_Activity">
+        <activity android:name=".Login_Activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,7 +43,11 @@
         <activity
             android:name=".SecondTab.MainActivity"
             android:label="@string/title_activity_main" />
-        <activity android:name=".ProfileView.ProfileView"></activity>
+        <activity android:name=".ProfileView.ProfileView" />
+        <activity android:name=".Card_Scan" >
+        </activity>
+        <activity android:name=".Card_Scan_write" >
+        </activity>
     </application>
 
 </manifest>

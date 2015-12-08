@@ -45,6 +45,7 @@ public class Dashboard_Activity extends AppCompatActivity
         {
             @Override
             public void onClick(View arg0) {
+                startActivity(new Intent( Dashboard_Activity.this , Card_Scan.class));
             }
         });
 
