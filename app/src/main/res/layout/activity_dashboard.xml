@@ -74,7 +74,7 @@ android:padding="5dp" >
         android:orientation="vertical" >
 
         <Button
-            android:id="@+id/lostCardDashBoard"
+            android:id="@+id/searchChildDashBoard"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"

@@ -17,12 +17,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sve15138.vaccinator.ProfileView.ProfileView;
 import com.example.sve15138.vaccinator.SecondTab.MainActivity;
 
 import java.util.Arrays;
-
-import vaccine_process.VaccineRecord;
 
 
 public class Card_Scan extends Activity {
@@ -40,7 +37,7 @@ public class Card_Scan extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card__scan);
+        setContentView(R.layout.activity_cardscan);
         ctx=this;
 
         imgV= (ImageView)findViewById(R.id.scan_image_view);

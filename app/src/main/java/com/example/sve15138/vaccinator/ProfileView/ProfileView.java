@@ -70,51 +70,42 @@ public class ProfileView extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.fragment_profileview , container , false);
+        View view = inflater.inflate(R.layout.fragment_profileview, container, false);
+
+        childName = (TextView) view.findViewById(R.id.profile_childName);
+        childID = (TextView) view.findViewById(R.id.profile_childID);
+        fatherName = (TextView) view.findViewById(R.id.profile_fatherName);
+        fatherCNIC = (TextView) view.findViewById(R.id.profile_fatherID);
+        address = (TextView) view.findViewById(R.id.profile_address);
+        district = (TextView) view.findViewById(R.id.profile_district);
+        tehsil = (TextView) view.findViewById(R.id.profile_tehsil);
+        childVaccinationHistory = (Button) view.findViewById(R.id.profile_vaccinationHistory);
 
         BabyInfo info = new Select().from(BabyInfo.class).where("ChildID = ?" , childIDParam).executeSingle();
 
-        Toast.makeText(getActivity().getApplicationContext() , info.childName + " " + info.district , Toast.LENGTH_LONG).show();
+        if( !info.equals(null) )
+        {
+            childName.setText(info.childName);
+            childID.setText(info.childID);
+            fatherName.setText(info.fatherName);
+            fatherCNIC.setText(info.fatherCNIC);
+            address.setText(info.address);
+            district.setText(info.district);
+            tehsil.setText(info.tehsil);
 
-        childName = (TextView) view.findViewById(R.id.profile_childName);
-        childName.setText(info.childName);
-
-        childID = (TextView) view.findViewById(R.id.profile_childID);
-        childID.setText(info.childID);
-
-        fatherName = (TextView) view.findViewById(R.id.profile_fatherName);
-        fatherName.setText(info.fatherName);
-
-        fatherCNIC = (TextView) view.findViewById(R.id.profile_fatherID);
-        fatherCNIC.setText(info.fatherCNIC);
-
-        address = (TextView) view.findViewById(R.id.profile_address);
-        address.setText(info.address);
-
-        district = (TextView) view.findViewById(R.id.profile_district);
-        district.setText(info.district);
-
-        tehsil = (TextView) view.findViewById(R.id.profile_tehsil);
-        tehsil.setText(info.tehsil);
-
-        childVaccinationHistory = (Button) view.findViewById(R.id.profile_vaccinationHistory);
-        
-
-
-        childVaccinationHistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
+            childVaccinationHistory.setOnClickListener(new View.OnClickListener()
             {
-                Intent itn=new Intent(getActivity(),VaccineRecord.class);
-
-                itn.putExtra("childID", childID.getText().toString());
-                itn.putExtra("childName", childName.getText().toString());
-                itn.putExtra("fatherName", fatherName.getText().toString());
-                startActivity(itn);
-
-
-            }
-        });
+                @Override
+                public void onClick(View v)
+                {
+                    startActivity(new Intent(getActivity(),VaccineRecord.class)
+                            .putExtra("childID", childID.getText().toString()));
+                }
+            });
+        }
+        else
+            Toast.makeText(getActivity().getApplicationContext() , "Please select a valid child ID" , Toast.LENGTH_LONG)
+                    .show();
 
         return view;
     }

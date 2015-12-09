@@ -87,7 +87,7 @@ public class VaccineRecord extends AppCompatActivity implements Fragment_BirthVi
             @Override
             public void onPageSelected(int arg0) {
                 clearBackStack();
-                String title ="Visit 1";
+                String title = "Visit 1";
                 setToolbar(title, false);
             }
 

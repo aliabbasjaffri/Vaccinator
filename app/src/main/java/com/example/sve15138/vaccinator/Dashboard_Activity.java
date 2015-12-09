@@ -20,7 +20,7 @@ public class Dashboard_Activity extends AppCompatActivity
         Button registerChild = (Button)findViewById(R.id.registerChildDashBoard);
         Button currentUCChildren = (Button)findViewById(R.id.currentUCChildrenDashBoard);
         Button scanCard = (Button)findViewById(R.id.scanCardDashBoard);
-        Button lostCard = (Button)findViewById(R.id.lostCardDashBoard);
+        Button searchChild = (Button)findViewById(R.id.searchChildDashBoard);
         Button planMyDay = (Button)findViewById(R.id.planMyDayDashBoard);
 
         registerChild.setOnClickListener(new View.OnClickListener()
@@ -49,7 +49,7 @@ public class Dashboard_Activity extends AppCompatActivity
             }
         });
 
-        lostCard.setOnClickListener(new View.OnClickListener() {
+        searchChild.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {

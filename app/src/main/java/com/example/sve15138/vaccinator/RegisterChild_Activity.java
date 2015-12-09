@@ -1,11 +1,9 @@
 package com.example.sve15138.vaccinator;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,11 +14,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.activeandroid.query.Select;
-
 import Persistance.Model.BabyInfo;
-import vaccine_process.VaccineRecord;
 
 public class RegisterChild_Activity extends AppCompatActivity
 {
@@ -46,8 +41,6 @@ public class RegisterChild_Activity extends AppCompatActivity
     String district1;
     String tehsil1;
 
-    Activity ctx;
-
     Spinner tehseelspinner ;
     Spinner districtspinner ;
 
@@ -56,8 +49,6 @@ public class RegisterChild_Activity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registerchild);
         setTitle("Register Child");
-
-        ctx=this;
 
         childname = (EditText) findViewById(R.id.childNameRegisterChild);
         radioSexGroup = (RadioGroup) findViewById(R.id.radioGroup);
@@ -81,24 +72,8 @@ public class RegisterChild_Activity extends AppCompatActivity
 
                 BabyInfo query = new Select().from(BabyInfo.class).where("ChildName = ?", childname.getText().toString()).executeSingle();
 
-                if( query.childID != "" && query.childName != "" && query.fatherName != "" ){
-
-                    Intent intent=new Intent(RegisterChild_Activity.this, Card_Scan_write.class);
-                    intent.putExtra("Child_ID",   childID);
-                    intent.putExtra("childName", childName);
-                    intent.putExtra("dateOfBirth", dateOfBirth);
-                    intent.putExtra("childGender", childgender);
-                    intent.putExtra("fatherName",fatherName);
-                    intent.putExtra("fatherCNIC", fatherCNIC);
-                    intent.putExtra("fatherMobile", fatherMobile);
-                    intent.putExtra("childAddress", childAddress);
-                    intent.putExtra("District", district1);
-                    intent.putExtra("Tehsil", tehsil1);
-
-                    startActivity(intent);
-                    ctx.finish();
-
-                }
+                if( !query.equals(null) )
+                    startActivity(new Intent(RegisterChild_Activity.this, Card_Scan_write.class).putExtra("Child_ID", childID));
                 else
                     Toast.makeText(RegisterChild_Activity.this , "Please enter all required values" , Toast.LENGTH_SHORT).show();
             }
@@ -120,7 +95,6 @@ public class RegisterChild_Activity extends AppCompatActivity
             default: childGender = true; break;
         }
 
-
         dateOfBirth = dateofbirth.getText().toString();
         fatherName = fathername.getText().toString();
         fatherCNIC = fathercnic.getText().toString();
@@ -139,11 +113,11 @@ public class RegisterChild_Activity extends AppCompatActivity
     {
         districtspinner = (Spinner)findViewById(R.id.districtSpinnerRegisterChild);
         tehseelspinner = (Spinner)findViewById(R.id.tehseelSpinnerRegisterChild);
-        districtspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
+        districtspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View arg1,
-                                       int arg2, long arg3) {
+            public void onItemSelected(AdapterView<?> parent, View arg1, int arg2, long arg3)
+            {
                 // TODO Auto-generated method stub
                 String val = (String) parent.getItemAtPosition(arg2);
 
@@ -333,7 +307,6 @@ public class RegisterChild_Activity extends AppCompatActivity
                 adapter_tehseel.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 tehseelspinner.setAdapter(adapter_tehseel);
                 ((BaseAdapter) tehseelspinner.getAdapter()).notifyDataSetChanged();
-                //adapter_tehseel.notifyDataSetChanged();
             }
 
             @Override
@@ -342,10 +315,5 @@ public class RegisterChild_Activity extends AppCompatActivity
 
             }
         });
-
-
-
-
-
     }
 }

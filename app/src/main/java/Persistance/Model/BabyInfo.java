@@ -18,7 +18,7 @@ public class BabyInfo extends Model
     @Column(name = "ChildDOB")
     public String childDOB;
 
-    @Column(name = "ChildGender")
+    @Column(name = "ChildGender")                   //true for Male, false for Female
     public boolean childGender;
 
     @Column(name = "FatherCNIC")

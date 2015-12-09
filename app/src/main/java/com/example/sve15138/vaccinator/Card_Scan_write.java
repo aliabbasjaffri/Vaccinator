@@ -55,7 +55,7 @@ public class Card_Scan_write extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card__scan_write);
+        setContentView(R.layout.activity_cardwrite);
 
         ctx=this;
         imgV= (ImageView)findViewById(R.id.scan_image_view_write);
