@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -35,6 +36,8 @@ public class SearchChild_Activity extends AppCompatActivity
     private Spinner tehsil;
     private Button searchNormal;
 
+    private ProgressBar progressBar;
+
     String childName;
     String childID;
     boolean childGender;
@@ -45,6 +48,7 @@ public class SearchChild_Activity extends AppCompatActivity
     String tehsil1;
     String searchType;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -52,13 +56,19 @@ public class SearchChild_Activity extends AppCompatActivity
         setContentView(R.layout.activity_searchchild);
         setTitle("Search Child");
 
+        childName = fatherName = fatherCNIC = fatherMobile = district1 = tehsil1 = "";
+
+        progressBar = (ProgressBar) findViewById(R.id.searchProgressBar);
+
         childID_editText = (EditText) findViewById(R.id.search_ChildID);
         radioSearchGroup = (RadioGroup) findViewById(R.id.radioSearchGroup);
         searchNormal = (Button) findViewById(R.id.search_normalSearchButton);
-        searchNormal.setOnClickListener(new View.OnClickListener() {
+        searchNormal.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v)
             {
+                progressBar.setVisibility(View.VISIBLE);
                 normalSearch();
             }
         });
@@ -73,7 +83,9 @@ public class SearchChild_Activity extends AppCompatActivity
 
                 if(searchType.equals("Advanced"))
                 {
+                    progressBar.setVisibility(View.VISIBLE);
                     advancedSearch();
+                    childID_editText.setText("");
                 }
             }
         });
@@ -86,17 +98,22 @@ public class SearchChild_Activity extends AppCompatActivity
         if(childID.trim().equals(""))
         {
             Toast.makeText(SearchChild_Activity.this, "Please enter a valid Child ID", Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.INVISIBLE);
             return;
         }
 
         BabyInfo childRecord = new Select().from(BabyInfo.class).where("ChildID = ?" , childID).executeSingle();
 
-        if( childRecord.equals(null) )
+        if( childRecord == null )
         {
             Toast.makeText(SearchChild_Activity.this, "No Such Child Exists", Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.INVISIBLE);
             return;
         }
+        else
+            Toast.makeText(SearchChild_Activity.this, "Child Exists! Hurrah!", Toast.LENGTH_SHORT).show();
         //startActivity(new Intent( SearchChild_Activity.this , ProfileView.class).putExtra("ChildID" , childID));
+        progressBar.setVisibility(View.INVISIBLE);
     }
 
     private void advancedSearch()
@@ -139,12 +156,16 @@ public class SearchChild_Activity extends AppCompatActivity
                         BabyInfo childRecord = new Select().from(BabyInfo.class)
                                 .where("ChildName = ? OR FatherName = ? OR FatherCNIC = ? OR ContactNumber = ? OR District = ? OR Tehsil = ? AND ChildGender = ?", childName, fatherName, fatherCNIC, fatherMobile, district1, tehsil1, childGender).executeSingle();
 
-                        if (childRecord.equals(null)) {
+                        if (childRecord == null) {
                             Toast.makeText(SearchChild_Activity.this, "No Such Child Exists", Toast.LENGTH_SHORT).show();
                             return;
                         }
 
                         Toast.makeText(SearchChild_Activity.this, "Child Exists!", Toast.LENGTH_LONG).show();
+
+                        radioSearchButton = (RadioButton)SearchChild_Activity.this.findViewById(R.id.search_radioButtonNormal);
+                        radioSearchButton.toggle();
+                        progressBar.setVisibility(View.INVISIBLE);
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -152,6 +173,7 @@ public class SearchChild_Activity extends AppCompatActivity
                     {
                         radioSearchButton = (RadioButton)SearchChild_Activity.this.findViewById(R.id.search_radioButtonNormal);
                         radioSearchButton.toggle();
+                        progressBar.setVisibility(View.INVISIBLE);
                         dialog.cancel();
                     }
                 });

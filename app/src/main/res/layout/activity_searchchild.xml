@@ -3,17 +3,18 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:padding="15dp">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Please Select your desired Search"
+        android:text="Please Select Your Desired Search"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,7 +58,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Enter Child ID"
-            android:inputType="number"
+            android:inputType="text"
             android:minHeight="45dp"
             android:paddingLeft="10dp"
             android:layout_weight="1"
@@ -81,8 +82,9 @@
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/progressBar"
+        android:id="@+id/searchProgressBar"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="40dp"
+        android:visibility="invisible" />
 
 </LinearLayout>

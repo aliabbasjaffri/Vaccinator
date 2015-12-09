@@ -21,9 +21,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.activeandroid.query.Select;
 import com.example.sve15138.vaccinator.R;
 
+import Persistance.Model.BabyInfo;
 import vaccine_process.Fragments.Fragment_FourthVisit;
 import vaccine_process.Fragments.Fragment_ThirdVisit;
 import vaccine_process.Fragments.Fragment_FifthVisit;
@@ -66,11 +69,19 @@ public class VaccineRecord extends AppCompatActivity implements Fragment_BirthVi
         childName = (TextView) findViewById(R.id.pager_childname_textview);
         fatherName = (TextView) findViewById(R.id.pager_fathername_textview);
 
-        Intent i = getIntent();
+        String childIDParam = getIntent().getStringExtra("childID");
 
-        childID.setText( i.getStringExtra("childID") );
-        childName.setText( i.getStringExtra("childName") );
-        fatherName.setText( i.getStringExtra("fatherName") );
+        BabyInfo info = new Select().from(BabyInfo.class).where("ChildID = ?" , childIDParam).executeSingle();
+
+        if( info == null )
+        {
+            Toast.makeText(this , "No Record Exists." , Toast.LENGTH_SHORT).show();
+            finish();
+        }
+
+        childID.setText( info.childID );
+        childName.setText( info.childName );
+        fatherName.setText( info.fatherName );
 
         mViewPager = (CustomViewPager) findViewById(R.id.view_pager);
         viewPagerAdapter = new TabsPagerAdapter(getSupportFragmentManager(), this.getApplicationContext() , instance );

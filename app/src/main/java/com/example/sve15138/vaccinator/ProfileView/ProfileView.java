@@ -83,7 +83,7 @@ public class ProfileView extends Fragment
 
         BabyInfo info = new Select().from(BabyInfo.class).where("ChildID = ?" , childIDParam).executeSingle();
 
-        if( !info.equals(null) )
+        if( info != null )
         {
             childName.setText(info.childName);
             childID.setText(info.childID);
