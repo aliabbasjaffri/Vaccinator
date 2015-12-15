@@ -72,7 +72,7 @@ public class RegisterChild_Activity extends AppCompatActivity
 
                 BabyInfo query = new Select().from(BabyInfo.class).where("ChildName = ?", childname.getText().toString()).executeSingle();
 
-                if( !query.equals(null) )
+                if( query!=null )
                     startActivity(new Intent(RegisterChild_Activity.this, Card_Scan_write.class).putExtra("Child_ID", childID));
                 else
                     Toast.makeText(RegisterChild_Activity.this , "Please enter all required values" , Toast.LENGTH_SHORT).show();

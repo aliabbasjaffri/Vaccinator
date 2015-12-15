@@ -51,6 +51,7 @@ public class VaccineRecord extends AppCompatActivity implements Fragment_BirthVi
     private TextView childID;
     private TextView childName;
     private TextView fatherName;
+    public String CHILDID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -80,6 +81,7 @@ public class VaccineRecord extends AppCompatActivity implements Fragment_BirthVi
         }
 
         childID.setText( info.childID );
+        CHILDID=info.childID;
         childName.setText( info.childName );
         fatherName.setText( info.fatherName );
 

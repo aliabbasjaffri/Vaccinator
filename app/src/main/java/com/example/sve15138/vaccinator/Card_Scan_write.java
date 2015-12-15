@@ -18,10 +18,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.activeandroid.query.Select;
 import com.example.sve15138.vaccinator.SecondTab.MainActivity;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+
+import Persistance.Model.BabyInfo;
 
 
 public class Card_Scan_write extends Activity {
@@ -49,6 +52,9 @@ public class Card_Scan_write extends Activity {
     private String Tehsil;
     private String Child_id;
 
+    private int VisitNum;
+    private String NextDueDate;
+
     private ImageView imgV;
 
 
@@ -74,20 +80,24 @@ public class Card_Scan_write extends Activity {
 
 
         Child_id=curr_intent.getExtras().getString("Child_ID");
-        childName=curr_intent.getExtras().getString("childName");
-        dateOfBirth=curr_intent.getExtras().getString("dateOfBirth");
+        BabyInfo info = new Select().from(BabyInfo.class).where("ChildID = ?" , Child_id).executeSingle();
+        childName=info.childName;
+        dateOfBirth=info.childDOB;
 
-        childGender=curr_intent.getExtras().getBoolean("childGender");
+        childGender=info.childGender;
 
 
-        fatherName=curr_intent.getExtras().getString("fatherName");
-        fatherCNIC=curr_intent.getExtras().getString("fatherCNIC");
-        fatherMobile=curr_intent.getExtras().getString("fatherMobile");
-        childAddress=curr_intent.getExtras().getString("childAddress");
-        District=curr_intent.getExtras().getString("District");
-        Tehsil=curr_intent.getExtras().getString("Tehsil");
+        fatherName=info.fatherName;
+        fatherCNIC=info.fatherCNIC;
+        fatherMobile=info.contactNumber;
+        childAddress=info.address;
+        District=info.district;
+        Tehsil=info.tehsil;
+        NextDueDate=info.nextDueDate;
+        VisitNum=info.visitNumber;
 
-        push_NFC= Child_id+"#"+childName+"#"+dateOfBirth+"#"+childGender+"#"+fatherName+"#"+ fatherCNIC+"#"+ fatherMobile+"#"+childAddress +"#"+District +"#"+Tehsil+"#"+"1";
+
+        push_NFC= Child_id+"#"+childName+"#"+dateOfBirth+"#"+childGender+"#"+fatherName+"#"+ fatherCNIC+"#"+ fatherMobile+"#"+childAddress +"#"+District +"#"+Tehsil+"#"+VisitNum+"#"+"000@@"+"#"+NextDueDate;
 
 
 
