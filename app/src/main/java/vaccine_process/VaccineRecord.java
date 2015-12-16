@@ -1,12 +1,8 @@
 package vaccine_process;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Point;
-import android.net.Uri;
 import android.os.Bundle;
-
-
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
@@ -22,23 +18,16 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.activeandroid.query.Select;
 import com.example.sve15138.vaccinator.R;
-
 import Persistance.Model.BabyInfo;
-import vaccine_process.Fragments.Fragment_FourthVisit;
-import vaccine_process.Fragments.Fragment_ThirdVisit;
-import vaccine_process.Fragments.Fragment_FifthVisit;
-import vaccine_process.Fragments.Fragment_SixthVisit;
-import vaccine_process.Fragments.Fragment_SecondVisit;
-import vaccine_process.Fragments.Fragment_BirthVisit;
 
 
 /**
  * Created by SVE15138 on 11/24/2015.
  */
-public class VaccineRecord extends AppCompatActivity implements Fragment_BirthVisit.OnFragmentInteractionListener, Fragment_SixthVisit.OnFragmentInteractionListener, Fragment_FifthVisit.OnFragmentInteractionListener, Fragment_FourthVisit.OnFragmentInteractionListener, Fragment_ThirdVisit.OnFragmentInteractionListener, Fragment_SecondVisit.OnFragmentInteractionListener {
+public class VaccineRecord extends AppCompatActivity
+{
 
     private CustomViewPager mViewPager;
     private TabsPagerAdapter viewPagerAdapter;
@@ -234,36 +223,5 @@ public class VaccineRecord extends AppCompatActivity implements Fragment_BirthVi
     protected void onPause()
     {
         super.onPause();
-    }
-
-
-    @Override
-    public void onFragmentInteraction14(Uri uri) {
-
-    }
-
-    @Override
-    public void onFragmentInteraction9(Uri uri) {
-
-    }
-
-    @Override
-    public void onFragmentInteraction6(Uri uri) {
-
-    }
-
-    @Override
-    public void onFragmentInteractionBirth(Uri uri) {
-
-    }
-
-    @Override
-    public void onFragmentInteraction10(Uri uri) {
-
-    }
-
-    @Override
-    public void onFragmentInteraction15(Uri uri) {
-
     }
 }
