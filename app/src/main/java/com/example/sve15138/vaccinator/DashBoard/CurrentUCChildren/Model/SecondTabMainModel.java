@@ -1,4 +1,4 @@
-package com.example.sve15138.vaccinator.SecondTab.Model;
+package com.example.sve15138.vaccinator.DashBoard.CurrentUCChildren.Model;
 
 /**
  * Created by aliabbasjaffri on 06/12/15.

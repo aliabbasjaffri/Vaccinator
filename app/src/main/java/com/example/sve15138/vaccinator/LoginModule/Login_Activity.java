@@ -1,4 +1,4 @@
-package com.example.sve15138.vaccinator;
+package com.example.sve15138.vaccinator.LoginModule;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.sve15138.vaccinator.DashBoard.Dashboard_Activity;
+import com.example.sve15138.vaccinator.R;
 
 public class Login_Activity extends AppCompatActivity
 {

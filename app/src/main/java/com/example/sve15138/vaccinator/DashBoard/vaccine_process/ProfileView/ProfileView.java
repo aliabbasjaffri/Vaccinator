@@ -1,7 +1,6 @@
-package com.example.sve15138.vaccinator.ProfileView;
+package com.example.sve15138.vaccinator.DashBoard.vaccine_process.ProfileView;
 
-import android.content.Context;
-import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.os.Bundle;
 import android.view.ViewGroup;
@@ -12,13 +11,11 @@ import android.support.v4.app.Fragment;
 
 import com.activeandroid.query.Select;
 import com.example.sve15138.vaccinator.R;
-import com.example.sve15138.vaccinator.SecondTab.MainActivity;
 
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 import Persistance.Model.BabyInfo;
-import vaccine_process.VaccineRecord;
 
 public class ProfileView extends Fragment
 {
@@ -98,8 +95,9 @@ public class ProfileView extends Fragment
                 @Override
                 public void onClick(View v)
                 {
-                    startActivity(new Intent(getActivity(),VaccineRecord.class)
-                            .putExtra("childID", childID.getText().toString()));
+                    getActivity() .getSupportFragmentManager()
+                            .popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                            //.popBackStack();
                 }
             });
         }

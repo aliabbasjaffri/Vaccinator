@@ -1,22 +1,21 @@
-package vaccine_process.Fragments;
+package com.example.sve15138.vaccinator.DashBoard.vaccine_process.DayFragments;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.view.LayoutInflater;
+import android.support.v4.app.Fragment;
 import com.example.sve15138.vaccinator.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Fragment_SecondVisit.OnFragmentInteractionListener} interface
+ * {@link Fragment_SixthVisit.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Fragment_SecondVisit#newInstance} factory method to
+ * Use the {@link Fragment_SixthVisit#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_SecondVisit extends Fragment {
+public class Fragment_SixthVisit extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -32,11 +31,11 @@ public class Fragment_SecondVisit extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment_SecondVisit.
+     * @return A new instance of fragment Fragment_SixthVisit.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_SecondVisit newInstance(String param1, String param2) {
-        Fragment_SecondVisit fragment = new Fragment_SecondVisit();
+    public static Fragment_SixthVisit newInstance(String param1, String param2) {
+        Fragment_SixthVisit fragment = new Fragment_SixthVisit();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -44,7 +43,7 @@ public class Fragment_SecondVisit extends Fragment {
         return fragment;
     }
 
-    public Fragment_SecondVisit() {
+    public Fragment_SixthVisit() {
         // Required empty public constructor
     }
 
@@ -61,6 +60,6 @@ public class Fragment_SecondVisit extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_secondvisit, container, false);
+        return inflater.inflate(R.layout.fragment_sixthvisit, container, false);
     }
 }

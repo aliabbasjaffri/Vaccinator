@@ -1,4 +1,4 @@
-package com.example.sve15138.vaccinator;
+package com.example.sve15138.vaccinator.DashBoard;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -19,17 +19,17 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.activeandroid.query.Select;
-import com.example.sve15138.vaccinator.SecondTab.MainActivity;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 import Persistance.Model.BabyInfo;
+import com.example.sve15138.vaccinator.DashBoard.vaccine_process.VaccineRecord;
+import com.example.sve15138.vaccinator.R;
 
 
-public class Card_Scan_write extends Activity {
-
-
+public class CardScanWrite extends Activity
+{
     Tag mytag;
     String push_NFC;
     Activity ctx;
@@ -37,9 +37,6 @@ public class Card_Scan_write extends Activity {
     private PendingIntent mPendingIntent;
     private IntentFilter[] mIntentFilters;
     private String[][] mNFCTechLists;
-
-
-
 
     private String childName;
     private boolean childGender = false;                                //True for Male. False for Female
@@ -50,7 +47,7 @@ public class Card_Scan_write extends Activity {
     private String childAddress;
     private String District;
     private String Tehsil;
-    private String Child_id;
+    private String ChildID;
 
     private int VisitNum;
     private String NextDueDate;
@@ -59,52 +56,37 @@ public class Card_Scan_write extends Activity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cardwrite);
 
-        ctx=this;
-        imgV= (ImageView)findViewById(R.id.scan_image_view_write);
-
+        ctx = this;
+        imgV = (ImageView)findViewById(R.id.scan_image_view_write);
 
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
 
-        if (mNfcAdapter != null) {
+        if (mNfcAdapter != null)
             imgV.setBackgroundColor(Color.BLACK);
-        } else {
+        else
             imgV.setBackgroundColor(Color.RED);
-        }
 
+        ChildID = getIntent().getExtras().getString("Child_ID");
+        BabyInfo info = new Select().from(BabyInfo.class).where("ChildID = ?" , ChildID).executeSingle();
+        childName = info.childName;
+        dateOfBirth = info.childDOB;
+        childGender = info.childGender;
+        fatherName = info.fatherName;
+        fatherCNIC = info.fatherCNIC;
+        fatherMobile = info.contactNumber;
+        childAddress = info.address;
+        District = info.district;
+        Tehsil = info.tehsil;
+        NextDueDate = info.nextDueDate;
+        VisitNum = info.visitNumber;
 
-        Intent curr_intent=getIntent();
-
-
-        Child_id=curr_intent.getExtras().getString("Child_ID");
-        BabyInfo info = new Select().from(BabyInfo.class).where("ChildID = ?" , Child_id).executeSingle();
-        childName=info.childName;
-        dateOfBirth=info.childDOB;
-
-        childGender=info.childGender;
-
-
-        fatherName=info.fatherName;
-        fatherCNIC=info.fatherCNIC;
-        fatherMobile=info.contactNumber;
-        childAddress=info.address;
-        District=info.district;
-        Tehsil=info.tehsil;
-        NextDueDate=info.nextDueDate;
-        VisitNum=info.visitNumber;
-
-
-        push_NFC= Child_id+"#"+childName+"#"+dateOfBirth+"#"+childGender+"#"+fatherName+"#"+ fatherCNIC+"#"+ fatherMobile+"#"+childAddress +"#"+District +"#"+Tehsil+"#"+VisitNum+"#"+"000@@"+"#"+NextDueDate;
-
-
-
-
-
-
-
+        push_NFC = ChildID + "#" + childName + "#" + dateOfBirth + "#" + childGender + "#" + fatherName + "#" + fatherCNIC + "#"
+                + fatherMobile +"#" + childAddress + "#" + District + "#" + Tehsil + "#" + VisitNum + "#" + "000@@" + "#" + NextDueDate;
 
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
 
@@ -123,48 +105,35 @@ public class Card_Scan_write extends Activity {
 
         mNFCTechLists = new String[][] { new String[] { NfcF.class.getName() } };
 
-        Button btn=(Button)findViewById(R.id.Push_nfc_btn);
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button pushToNFC = (Button)findViewById(R.id.Push_nfc_btn);
+        pushToNFC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Push_into_NFC();
             }
         });
-
-
     }
-
-
-
-
-
-
-
-
-
-
 
     public int Push_into_NFC()
     {
-
-        int loop_check=0;
+        int loop_check = 0;
         // making string for NFC storage
-
 
         //nfc try catch
         try {
-            if (mytag == null) {
+            if (mytag == null)
                 Toast.makeText(this, "Please Bring phone near to a tag", Toast.LENGTH_LONG).show();
-            } else {
+
+            else
+            {
                 write(push_NFC, mytag);
 
-                Toast.makeText(this, "Save in NFC", Toast.LENGTH_LONG).show();
-                Intent myintent = new Intent(this, MainActivity.class);
+                Toast.makeText(this, "Data updated in NFC card", Toast.LENGTH_LONG).show();
+                Intent myintent = new Intent(this, VaccineRecord.class);
 
-                myintent.putExtra("childid",Child_id);
+                myintent.putExtra("childID", ChildID);
 
                 ctx.finish();
-
 
                 startActivity(myintent);
                 return 1;
@@ -181,13 +150,6 @@ public class Card_Scan_write extends Activity {
         return 0;
     }
 
-
-
-
-
-
-
-
     @Override
     public void onNewIntent(Intent intent) {
         mytag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
@@ -197,7 +159,7 @@ public class Card_Scan_write extends Activity {
         if(Push_into_NFC()==1) {
 
             /// Saving Child Record in DB
-            BabyInfo newBabyRegistration = new BabyInfo(Child_id, childName, dateOfBirth, childGender, fatherName,
+            BabyInfo newBabyRegistration = new BabyInfo(ChildID, childName, dateOfBirth, childGender, fatherName,
                     fatherCNIC, fatherMobile, childAddress, District, Tehsil);
 
             newBabyRegistration.save();
@@ -218,8 +180,6 @@ public class Card_Scan_write extends Activity {
             ctx.finish();
         }*/
     }
-
-
 
     // Functions onwards are for NFC ignore them
     private NdefRecord createRecord(String text) throws UnsupportedEncodingException {
@@ -259,13 +219,11 @@ public class Card_Scan_write extends Activity {
             mNfcAdapter.enableForegroundDispatch(this, mPendingIntent, mIntentFilters, mNFCTechLists);
     }
     @Override
-    public void onPause() {
+    public void onPause()
+    {
         super.onPause();
 
         if (mNfcAdapter != null)
             mNfcAdapter.disableForegroundDispatch(this);
     }
-
-
-
 }

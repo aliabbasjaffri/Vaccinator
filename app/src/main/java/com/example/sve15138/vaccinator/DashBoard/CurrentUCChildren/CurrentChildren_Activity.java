@@ -1,14 +1,13 @@
-package com.example.sve15138.vaccinator.SecondTab;
+package com.example.sve15138.vaccinator.DashBoard.CurrentUCChildren;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.sve15138.vaccinator.ProfileView.ProfileView;
+import com.example.sve15138.vaccinator.DashBoard.vaccine_process.ProfileView.ProfileView;
 import com.example.sve15138.vaccinator.R;
-import com.example.sve15138.vaccinator.SecondTab.Fragment.SecondTabMainFragment;
+import com.example.sve15138.vaccinator.DashBoard.CurrentUCChildren.Fragment.SecondTabMainFragment;
 
-public class MainActivity extends AppCompatActivity
+public class CurrentChildren_Activity extends AppCompatActivity
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -18,11 +17,11 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        if(getIntent().hasExtra("childid")) {
+        if(getIntent().hasExtra("childID")) {
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.secondtab_main_frameLayout, ProfileView.newInstance(getIntent().getStringExtra("childid")))
+                    .replace(R.id.secondtab_main_frameLayout, ProfileView.newInstance(getIntent().getStringExtra("childID")))
                     .commit();
 
         }

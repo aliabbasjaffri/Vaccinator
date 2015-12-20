@@ -1,6 +1,7 @@
-package com.example.sve15138.vaccinator;
+package com.example.sve15138.vaccinator.DashBoard.ChildSearch;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,8 +19,10 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.activeandroid.query.Select;
+import com.example.sve15138.vaccinator.R;
 
 import Persistance.Model.BabyInfo;
+import com.example.sve15138.vaccinator.DashBoard.vaccine_process.VaccineRecord;
 
 public class SearchChild_Activity extends AppCompatActivity
 {
@@ -111,14 +114,13 @@ public class SearchChild_Activity extends AppCompatActivity
             return;
         }
         else
-            Toast.makeText(SearchChild_Activity.this, "Child Exists! Hurrah!", Toast.LENGTH_SHORT).show();
-        //startActivity(new Intent( SearchChild_Activity.this , ProfileView.class).putExtra("ChildID" , childID));
+            startActivity(new Intent(SearchChild_Activity.this, VaccineRecord.class).putExtra("childID", childID));
+
         progressBar.setVisibility(View.INVISIBLE);
     }
 
     private void advancedSearch()
     {
-        // get prompts.xml view
         LayoutInflater layoutInflater = LayoutInflater.from(SearchChild_Activity.this);
         View promptView = layoutInflater.inflate(R.layout.advanced_search, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SearchChild_Activity.this);
@@ -385,5 +387,12 @@ public class SearchChild_Activity extends AppCompatActivity
 
             }
         });
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        childID_editText.setText("");
     }
 }

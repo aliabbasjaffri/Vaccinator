@@ -1,4 +1,4 @@
-package com.example.sve15138.vaccinator;
+package com.example.sve15138.vaccinator.DashBoard.CardScan;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -17,12 +17,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sve15138.vaccinator.SecondTab.MainActivity;
+import com.example.sve15138.vaccinator.DashBoard.CurrentUCChildren.CurrentChildren_Activity;
+import com.example.sve15138.vaccinator.R;
 
 import java.util.Arrays;
 
 
-public class Card_Scan extends Activity {
+public class CardScan_Activity extends Activity {
 
     private NfcAdapter mNfcAdapter;
     private PendingIntent mPendingIntent;
@@ -116,7 +117,7 @@ public class Card_Scan extends Activity {
 
 
 
-        Intent myintent = new Intent(this, MainActivity.class);
+        Intent myintent = new Intent(this, CurrentChildren_Activity.class);
 
 
         String Arry[] = s.split("#");

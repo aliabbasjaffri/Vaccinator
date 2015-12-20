@@ -15,88 +15,20 @@ android:fillViewport="true">
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.8dp"
-            android:id="@+id/separator1"
-            android:visibility="visible"
-            android:layout_below="@+id/VaccineProcessActivityTabLayoutInclude"
-            android:background="@android:color/darker_gray"/>
-
-        <TextView
-            android:id="@+id/pager_childID_textview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/standard_padding"
-            android:text="Child ID"
-            android:textColor="@color/black"
-            android:textSize="17dp"
-            android:layout_below="@+id/VaccineProcessActivityTabLayoutInclude"
-            android:gravity="center"
-            android:textStyle="bold" />
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.8dp"
-            android:id="@+id/separator2"
-            android:visibility="visible"
-            android:layout_below="@+id/pager_childID_textview"
-            android:background="@android:color/darker_gray"/>
-
-        <TextView
-            android:id="@+id/pager_childname_textview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/standard_padding"
-            android:text="Child Name"
-            android:textColor="@color/black"
-            android:textSize="17dp"
-            android:layout_below="@+id/separator2"
-            android:gravity="center"
-            android:textStyle="bold" />
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.8dp"
-            android:id="@+id/separator3"
-            android:visibility="visible"
-            android:layout_below="@+id/pager_childname_textview"
-            android:background="@android:color/darker_gray"/>
-
-        <TextView
-            android:id="@+id/pager_fathername_textview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/standard_padding"
-            android:text="Father Name"
-            android:textColor="@color/black"
-            android:textSize="17dp"
-            android:layout_below="@+id/separator3"
-            android:gravity="center"
-            android:textStyle="bold" />
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.8dp"
-            android:id="@+id/separator4"
-            android:visibility="visible"
-            android:layout_below="@+id/pager_fathername_textview"
-            android:background="@android:color/darker_gray"/>
-
-        <vaccine_process.CustomViewPager
+        <com.example.sve15138.vaccinator.DashBoard.vaccine_process.CustomViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/separator4" />
+            android:layout_below="@+id/VaccineProcessActivityTabLayoutInclude" />
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/view_pager"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
+            android:layout_alignParentStart="false"
             android:id="@+id/frame_container"
-            android:layout_alignParentBottom="true" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true" />
 
     </RelativeLayout>
 </ScrollView>

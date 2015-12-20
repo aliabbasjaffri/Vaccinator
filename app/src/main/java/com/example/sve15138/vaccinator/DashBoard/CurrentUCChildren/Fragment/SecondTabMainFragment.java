@@ -1,4 +1,4 @@
-package com.example.sve15138.vaccinator.SecondTab.Fragment;
+package com.example.sve15138.vaccinator.DashBoard.CurrentUCChildren.Fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,8 +10,8 @@ import android.widget.ListView;
 
 import com.activeandroid.query.Select;
 import com.example.sve15138.vaccinator.R;
-import com.example.sve15138.vaccinator.SecondTab.Adapter.SecondTabMainAdapter;
-import com.example.sve15138.vaccinator.SecondTab.Model.SecondTabMainModel;
+import com.example.sve15138.vaccinator.DashBoard.CurrentUCChildren.Adapter.SecondTabMainAdapter;
+import com.example.sve15138.vaccinator.DashBoard.CurrentUCChildren.Model.SecondTabMainModel;
 
 import java.util.ArrayList;
 import java.util.List;

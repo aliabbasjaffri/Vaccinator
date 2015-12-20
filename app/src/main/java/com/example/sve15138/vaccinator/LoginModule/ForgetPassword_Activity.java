@@ -1,4 +1,4 @@
-package com.example.sve15138.vaccinator;
+package com.example.sve15138.vaccinator.LoginModule;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.sve15138.vaccinator.R;
 
 public class ForgetPassword_Activity extends AppCompatActivity {
 

@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.sve15138.vaccinator.SecondTab.MainActivity">
+    tools:context=".DashBoard.CurrentUCChildren.CurrentChildren_Activity">
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

@@ -1,4 +1,4 @@
-package vaccine_process;
+package com.example.sve15138.vaccinator.DashBoard.vaccine_process;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
@@ -16,7 +16,6 @@ public class CustomViewPager extends ViewPager {
 
     public CustomViewPager(Context context) {
         super(context);
-
     }
 
     public CustomViewPager(Context context, AttributeSet attrs) {

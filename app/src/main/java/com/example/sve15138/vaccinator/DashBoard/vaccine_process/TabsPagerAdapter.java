@@ -1,34 +1,42 @@
-package vaccine_process;
+package com.example.sve15138.vaccinator.DashBoard.vaccine_process;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 import android.support.v4.app.FragmentPagerAdapter;
 
-import vaccine_process.Fragments.Fragment_FifthVisit;
-import vaccine_process.Fragments.Fragment_FourthVisit;
-import vaccine_process.Fragments.Fragment_SixthVisit;
-import vaccine_process.Fragments.Fragment_ThirdVisit;
-import vaccine_process.Fragments.Fragment_SecondVisit;
-import vaccine_process.Fragments.Fragment_BirthVisit;
+import com.activeandroid.query.Select;
+
+import java.util.List;
+
+import Persistance.Model.VaccinationSchedule;
+import com.example.sve15138.vaccinator.DashBoard.vaccine_process.DayFragments.Fragment_FifthVisit;
+import com.example.sve15138.vaccinator.DashBoard.vaccine_process.DayFragments.Fragment_FourthVisit;
+import com.example.sve15138.vaccinator.DashBoard.vaccine_process.DayFragments.Fragment_SixthVisit;
+import com.example.sve15138.vaccinator.DashBoard.vaccine_process.DayFragments.Fragment_ThirdVisit;
+import com.example.sve15138.vaccinator.DashBoard.vaccine_process.DayFragments.Fragment_SecondVisit;
+import com.example.sve15138.vaccinator.DashBoard.vaccine_process.DayFragments.Fragment_BirthVisit;
 
 /**
  * Created by SVE15138 on 11/24/2015.
  */
 public class TabsPagerAdapter extends FragmentPagerAdapter
 {
-    private Context context;
     public static TabsPagerAdapter instance;
     public static VaccineRecord vaccineRecord;
 
-    public TabsPagerAdapter(FragmentManager fm, Context context, VaccineRecord Vaccinerecord )
+    String childIDParam;
+
+    public TabsPagerAdapter(FragmentManager fm, VaccineRecord Vaccinerecord )
     {
         super(fm);
 
         instance = this;
         vaccineRecord = Vaccinerecord;
-        this.context = context;
+
+        childIDParam = vaccineRecord.childIDParam;
+
+        List<VaccinationSchedule> info = new Select().from(VaccinationSchedule.class).where("ChildID = ?" , childIDParam).execute();
     }
 
     @Override

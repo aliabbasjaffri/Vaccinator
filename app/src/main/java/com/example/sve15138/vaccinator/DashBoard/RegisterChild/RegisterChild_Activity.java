@@ -1,9 +1,10 @@
-package com.example.sve15138.vaccinator;
+package com.example.sve15138.vaccinator.DashBoard.RegisterChild;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,7 +15,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
-import com.activeandroid.query.Select;
+
+import com.example.sve15138.vaccinator.DashBoard.CardScanWrite;
+import com.example.sve15138.vaccinator.R;
+
 import Persistance.Model.BabyInfo;
 
 public class RegisterChild_Activity extends AppCompatActivity
@@ -69,13 +73,6 @@ public class RegisterChild_Activity extends AppCompatActivity
             public void onClick(View v)
             {
                 saveBaby();
-
-                BabyInfo query = new Select().from(BabyInfo.class).where("ChildName = ?", childname.getText().toString()).executeSingle();
-
-                if( query!=null )
-                    startActivity(new Intent(RegisterChild_Activity.this, Card_Scan_write.class).putExtra("Child_ID", childID));
-                else
-                    Toast.makeText(RegisterChild_Activity.this , "Please enter all required values" , Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -102,11 +99,23 @@ public class RegisterChild_Activity extends AppCompatActivity
         childAddress = childaddress.getText().toString();
         district1 = district.getSelectedItem().toString();
         tehsil1 = tehsil.getSelectedItem().toString();
+
         // @@@@@@@@@@@@@@@@@@@@@@@@@@ -- Temporary Setting childID -- @@@@@@@@@@@@@@@@@@@@@@@@@@
         childID = fatherCNIC;
-        BabyInfo newBabyRegistration = new BabyInfo( childID , childName, dateOfBirth, childGender,
-                fatherCNIC, fatherName, fatherMobile, childAddress, district1, tehsil1);
-        newBabyRegistration.save();
+        // @@@@@@@@@@@@@@@@@@@@@@@@@@ -- Temporary Setting childID -- @@@@@@@@@@@@@@@@@@@@@@@@@@
+
+        if(validateData())
+        {
+            BabyInfo newBabyRegistration = new BabyInfo( childID , childName, dateOfBirth, childGender,
+                    fatherCNIC, fatherName, fatherMobile, childAddress, district1, tehsil1);
+            newBabyRegistration.save();
+
+            startActivity(new Intent(RegisterChild_Activity.this, CardScanWrite.class)
+                    .putExtra("Child_ID", newBabyRegistration.childID));
+        }
+        else
+            Toast.makeText(RegisterChild_Activity.this , "Please enter all required values" , Toast.LENGTH_SHORT).show();
+
     }
 
     public void Set_all_spinners()
@@ -315,5 +324,19 @@ public class RegisterChild_Activity extends AppCompatActivity
 
             }
         });
+    }
+
+    boolean validateData()
+    {
+        if( childName.equals("")) return false;
+        else if( childgender.equals("") ) return false;
+        else if( dateOfBirth.equals("") ) return false;
+        else if( fatherName.equals("")) return false;
+        else if( fatherCNIC.equals("")) return false;
+        else if( fatherMobile.equals("") ) return false;
+        else if( childAddress.equals("") ) return false;
+        else if( district1.equals("") ) return false;
+        else if( tehsil1.equals("")) return false;
+        else return true;
     }
 }
